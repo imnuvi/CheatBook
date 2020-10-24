@@ -1,5 +1,4 @@
-# problems in regex
-
+# find if the number given is a valid float string
 import re
 
 
