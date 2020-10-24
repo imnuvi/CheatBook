@@ -33,10 +33,18 @@ Match_2 = re.findall(Pattern_2, Test_String_2)
 # After that, S should have 0 or more lowercase letters.
 # S should end with 0 or more uppercase letters
 
-Pattern_2 = r'^\d{2,}[a-z]*[A-Z]*$'
-Test_String_2 = "14"    #true
-Match_2 = re.findall(Pattern_2, Test_String_2)
+Pattern_3 = r'^\d{2,}[a-z]*[A-Z]*$'
+Test_String_3 = "14"    #true
+Match_3 = re.findall(Pattern_3, Test_String_3)
 
 
 
 # one or more repetitions are matched with + .  \d* matches one or more digits
+
+# S should begin with  or more digits.
+# After that, S should have 1 or more uppercase letters.
+# S should end with 1 or more lowercase letters.
+
+Pattern_4 = r'^\d+[A-Z]+[a-z]+$'
+Test_String_4 = "1Qa"    #true
+Match_4 = re.findall(Pattern_3, Test_String_4)
