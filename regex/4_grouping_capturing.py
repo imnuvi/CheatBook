@@ -26,4 +26,15 @@ Test_String_2 = "uhhh okokok chillout"    #true
 Match_2 = re.findall(Pattern_2, Test_String_2)
 
 
+
+# alternative matching is used to match a single item out of several possibilities (or operator). this is done with the line operator inside a group.  (bob|kevin|stuart) matches bob , kevin or stuart
+
+# S must start with Mr., Mrs., Ms., Dr. or Er..
+# The rest of the string must contain only one or more English alphabetic letters (upper and lowercase).
+
+Pattern_3 = "^(Mr\.|Mrs\.|Ms\.|Dr\.|Er\.)[a-zA-Z]+$"
+alt_pattern_3 = "^(Mr?s | [MDE]r)\.[a-zA-Z]+$"  #this is a clever ass way where ? either matches what comes after or doesnt
+Test_String_2 = "uhhh okokok chillout"    #true
+Match_2 = re.findall(Pattern_2, Test_String_2)
+
 print(Match_2)
