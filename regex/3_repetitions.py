@@ -1,6 +1,6 @@
 # this set has all repetition counts and multiple occourances
 
-
+import re
 
 # repetitions can be matched with { } brackets. The number within the brackets is the count and matches exactly that number of occourances.  [a-z]{3} matches all 3 letter words
 

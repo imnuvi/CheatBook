@@ -34,6 +34,8 @@ Test_String_3 = "DS 12 PM"
 Match_3 = re.findall(Pattern_3, Test_String_3)
 
 
+print(Match_3)
+
 
 # word and non-word,  \w matches word character, \W matches non-word character
 # match pattern wwwXwwwwwwXwww
