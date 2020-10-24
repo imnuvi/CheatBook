@@ -22,7 +22,7 @@ Match_1 = re.findall(Pattern_1, Test_String_1)
 
 
 
-# excluding character values from a list is done usin ^ within square brackets
+# excluding character values from a list is done usin ^ within square brackets. eg [^aeiou] is everything but vowels
 
 # Find pattern with length 6
 # First character should not be a digit.
@@ -32,13 +32,13 @@ Match_1 = re.findall(Pattern_1, Test_String_1)
 # Fifth character should not be a uppercase vowel (  A E I O U ).
 # Sixth character should not be a . or , symbol.
 
-Pattern_2 = r'^[123][120][xs0][30Aa][xsu][.,]$'
-Test_String_2 = "12xAu,"    #true
+Pattern_2 = r'^\D[^aeiou][^bcDF][^\s][^AEIOU][^.,]$'
+Test_String_2 = "think?"    #true
 Match_2 = re.findall(Pattern_2, Test_String_2)
 
 
 
-# a range of characters can be given with the - character, within square brackets.  [a-z] means all alphabets from a to z
+# a range of characters can be given with the - character, within square brackets.  [a-z] means all alphabets from a to z [^a-z] means everyithing but alphabets a to z.
 
 # word length greater than or equal to 5
 # The first character must be a lowercase English alphabetic character.
