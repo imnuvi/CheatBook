@@ -13,3 +13,17 @@ import re
 Pattern_1 = r'\b[aeiouAEIOU][a-zA-Z]*\b'
 Test_String_1 = "Found Any match?"    #this matches all three words, because the boundries are as |Found| |Any| |match|?
 Match_1 = re.findall(Pattern_1, Test_String_1)
+
+
+
+# capturing and non capturing groups. a pattern can be captured and then used again in the replacement of value.  this can be done with ([a-z])  captures all alphabets and stores them which can later be used with $1, non capturing is done with (?:)
+    # check "https://stackoverflow.com/a/3513858"
+
+# word should have 3 or more consecutive repetitions of ok.
+
+Pattern_2 = r'(ok){3,}'
+Test_String_2 = "uhhh okokok chillout"    #true
+Match_2 = re.findall(Pattern_2, Test_String_2)
+
+
+print(Match_2)
