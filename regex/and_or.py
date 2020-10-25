@@ -14,4 +14,6 @@ while re.search(r'\s{1}&&\s{1}',x):
     x = re.sub(r'\s{1}&&\s{1}', " and ", x)
 while re.search(r'\s{1}\|\|\s{1}',x):
     x = re.sub("\s{1}\|\|\s{1}", " or ", x)
+
+    
 print(x)
