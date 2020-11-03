@@ -2,7 +2,7 @@
 
 # this displays all files with their sizes in kb along with "Kb"
 
-awk ' { print $1,$2/1024"Kb" } '
+{ print $1,$2/1024"Kb" }
 
 
 
@@ -10,4 +10,4 @@ awk ' { print $1,$2/1024"Kb" } '
 
 # this prints all binaries with value greater than 20Kb
 
-awk ' $2 > 20000 { print $1,$2 } '
+$2 > 20000 { print $1,$2 }

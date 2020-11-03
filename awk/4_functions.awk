@@ -4,6 +4,4 @@
 # converts the float value in kilobytes to integer of all files that start with "w"
 
 
-awk ' /^w/ {print $1,int($2/1024)"Kb" '
-
-
+/^w/ {print $1,int($2/1024)"Kb"

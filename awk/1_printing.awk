@@ -2,10 +2,10 @@
 
 #the syntax is awk ' { command within braces } ' filename
 
-awk ' { print } '
+{ print }
 
 
 # $ is used to access fields, $0 prints everything, $1 prints just the first element in each line.  useful for finding stuff from tables or when listing folders entirely
 
 
-awk ' { print $1 } '
+{ print $1 }
