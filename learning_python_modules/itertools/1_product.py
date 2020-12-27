@@ -1,6 +1,6 @@
 # itertools product gives all possible product combinations of a list/lists
 
-# print all possible product combinations of the two given lists, in the literal touple representation, "(val1, val2)"
+# print all possible product combinations of the two given lists, in the literal tuple representation, "(val1, val2)"
 
 from itertools import product
 
