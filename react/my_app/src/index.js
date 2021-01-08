@@ -22,6 +22,15 @@ class Board extends React.Component {
     };
   }
 
+  resetBoard(){
+    this.setState(
+      {
+        squares_array : Array(9).fill(null),
+        xIsNext: true,
+      }
+    )
+  }
+
   handleclick(i){
     const sq = this.state.squares_array.slice();
     if (calculateWinner(sq) || sq[i]) {
@@ -36,6 +45,16 @@ class Board extends React.Component {
 
   renderSquare(i) {
     return ( <Square value={ this.state.squares_array[i] } onClick={() => this.handleclick(i) }/> );
+  }
+
+  restartButton(winner){
+
+    if (winner){return(
+        <div>
+          <button onClick={() => this.resetBoard() }>restart</button>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -66,6 +85,7 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+        {this.restartButton(winner)}
       </div>
     );
   }
