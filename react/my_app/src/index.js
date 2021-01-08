@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './style.css';
 
 
+// ht = document.getElementsByTagName('html')
+document.body.style.backgroundColor = 'black';
+
 class Square extends React.Component {
   render() {
     return (
@@ -61,7 +64,7 @@ class Board extends React.Component {
 
     const winner = calculateWinner(this.state.squares_array);
     let status;
-    if (winner == "draw"){
+    if (winner === "draw"){
       status = 'Game draw'
     }
     else if (winner) {
