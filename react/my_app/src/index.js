@@ -61,7 +61,10 @@ class Board extends React.Component {
 
     const winner = calculateWinner(this.state.squares_array);
     let status;
-    if (winner) {
+    if (winner == "draw"){
+      status = 'Game draw'
+    }
+    else if (winner) {
       status = 'Winner: ' + winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
@@ -134,5 +137,10 @@ function calculateWinner(squares) {
       return squares[a];
     }
   }
-  return null;
+  for (let j=0; j<9; j++){
+    if (squares[j] === null){
+      return null
+    }
+  }
+  return "draw";
 }
