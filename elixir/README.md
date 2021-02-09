@@ -38,6 +38,9 @@ This is my progress through learning elixir and functional programming
 <p> Garbage collection in elixir happens differently. the data is divided among the processes and each process has its own heap and so separate garbage collection for those heaps happens faster(since theyre small). If a process terminates without reaching the max heap size, then there is no need for garbage collection for that process</p>
 
 
+<h4>coding with immutability</h4>
+<p>we never directly change a value, and every function returns a value, Always. So for example if we want to lowercase a string we dont call <i>mystring.lowercase</i> but we call <code>newstring = String.downcase(mystring)</code></p>
+
 
 
 
