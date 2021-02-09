@@ -39,10 +39,52 @@ This is my progress through learning elixir and functional programming
 
 
 <h4>coding with immutability</h4>
-<p>we never directly change a value, and every function returns a value, Always. So for example if we want to lowercase a string we dont call <i>mystring.lowercase</i> but we call <code>newstring = String.downcase(mystring)</code></p>
+<p>we never directly change a value, and every function returns a value, Always. So for example if we want to lowercase a string we dont call <i>mystring.lowercase</i> but we call <code>newstring = String.downcase(mystring)</code>\ this keeps reminding us that all data returns and never mutates</p>
 
 
+<h2>Elixir Basics</h2><p>(the language)</p>
+<h4>Built in Types</h4>
+  <ul>
+    <li><h5>Value Types</h5></li>
+      <ul>
+        <li>arbitrary sized integers</li>
+        <li>floating point numbers</li>
+        <li>atoms</li>
+        <li>ranges</li>
+        <li>regular expressions</li>
+      </ul>
+    <li><h5>System Types</h5></li>
+      <ul>
+        <li>PIDs and ports</li>
+        <li>References</li>
+      </ul>
+    <li><h5>System Types</h5></li>
+      <ul>
+        <li>PIDs and ports</li>
+        <li>References</li>
+      </ul>
+    <li><h5>Collection Types</h5></li>
+      <ul>
+        <li>Tuples</li>
+        <li>Lists</li>
+        <li>Maps</li>
+        <li>Binaries</li>
+      </ul>
+  </ul>
 
+<h5>Value Types</h5>
+<br>
+ - Integers: These are basically numbers. An integer can be represented as binary, octal, decimal(these may contain underscores for every three digits 1_000_000), hexadecimal. There is no specific limit to the size of an integer.<br><br>
+ - Floating-point: Written with a decimal point. must have atleast one digit before and after the decimal. eg. 1.0, 0.2456, 314159.01e-5, 0.2451e4<br><br>
+ - Atoms: atom is a constant representing somethings name. These are written with leading semi-colon( : ), followed by words elixir operators, letters, digits and @, they can end with exclamation or question marks. Arbitrary atoms can be created with double quotes. e.g. valid atoms  :is_binary? , :<> , :=== , :"myfunc/3" , :frank . an atoms name is its value. two atoms with same name will always be equal doesnt matter where or when theyre created.<br><br>
+ - Ranges: ranges are represented as <code>start..end</code>. these start and end can be any data type, but if you want to iterate over a range the ends must be integers<br><br>
+ - Regular Expressions: regular expression literals are written as <code>~r{pattern}</code> or <code>~r{pattern}opts</code> opts are extra options to alter behaviour of the pattern
+ <ul>
+  <li><code>f</code> force a pattern match at start of line for multiline</li>
+  <li><code>g</code>support named groups</li>
+  <li><code>i</code>makes matches case insensitive</li>
+  <li><code>m</code> if string has multiple lines <code>^</code>matches start of a line and <code>$</code>. <code>\A and \Z</code>continue to match the end of these lines</li>
+ </ul>
 
 
 <!--  -->
