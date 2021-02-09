@@ -34,6 +34,9 @@ This is my progress through learning elixir and functional programming
 <br>
 <p>So the solution is to keep the data immutable and access it whenever necessary. This is done by duplicating the data and then changing it. This might look like a lot of storage would be required for the program. But, Elixir handles this. for example, lets say we have a list <code>list1 = [1,2,3]</code> Now if we want a new list with the number 4 at the front we just say <code>list2 = [ 4 | list1]</code>. now this looks like code duplication, but since elixir knows all data is immutable, it just references the list 1 we created and adds a four before it in list2. Now this means with the help of a bit more space we essentially created a new list with 4 in the front( Neat )   <br><b>Note :</b> This format of <code>list = [ head | tail ]</code> is a type of list formatting which we will see later</p>
 
+<h4>garbage collection</h4>
+<p> Garbage collection in elixir happens differently. the data is divided among the processes and each process has its own heap and so separate garbage collection for those heaps happens faster(since theyre small). If a process terminates without reaching the max heap size, then there is no need for garbage collection for that process</p>
+
 
 
 
