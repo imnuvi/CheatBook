@@ -85,7 +85,20 @@ This is my progress through learning elixir and functional programming
   <li><code>i</code>makes matches case insensitive</li>
   <li><code>m</code> if string has multiple lines <code>^</code>matches start of a line and <code>$</code>. <code>\A and \Z</code>continue to match the end of these lines</li>
   <li><code>r</code>makes the code <i>reluctant</i> instead of greedy( the + and * are greedy and match as much as possible. but this flag makes them match as little as possible) </li>
+  <li><code>s</code> allows " . " to match newlines as well</li>
+  <li><code>u</code> allows unicode specific patttern matching</li>
+  <li><code>x</code> extended mode. ignore whitespace and comments</li>
  </ul>
+
+ Regular expressions can be manipulated with the Regex module<br>
+ iex><code>Regex.scan ~r{[aeiou]}, "caterpillar"</code><br>
+ [["a"],["e"],["i"],["a"]]<br>
+
+ iex><code>Regex.replace ~r{[aeiou]}, "caterpillar", "h"</code><br>
+ "chthrphllhr"
+
+
+
 
 
 <!--  -->
