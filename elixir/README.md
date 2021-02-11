@@ -127,7 +127,15 @@ There are three functions that work on tuples only.<br>
 <br>
 <br>
 - Lists: Lists are not like lists in other languages although the syntax wants you to believe so. A list can either be empty or have a head and a tail. The tail can then be another list(empty or with a head and tail)( basically a list inception. ). They are easy to traverse linearly, but hard to access randomly( say if we want to get the fourth element, we need to traverse all the 3 previous elements. It is always cheap to get the head of a list and then get its tail.)<br>
-lists are also immutable so once a list is created we cannot change it. But If we want to remove the head from a list, we dont have to copy the entire list. we just return the pointer to its tail and the head is gone( neat ).
+lists are also immutable so once a list is created we cannot change it. But If we want to remove the head from a list, we dont have to copy the entire list. we just return the pointer to its tail and the head is gone( neat ).<br>
+There are some list only functions<br>
+iex> <code>[1, 2, 3] ++ [4, 5]</code><br>
+<code>[1, 2, 3, 4, 5]</code><br>
+iex> <code>[1, 2, 3, 4] -- [2, 3, 5, 6]</code><br>
+<code>[1, 4]</code><br>
+iex> <code>1 in [1, 2, 3, 4]</code><br>
+<code>true</code><br>
+
 
 
 <!--  -->
