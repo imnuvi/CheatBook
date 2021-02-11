@@ -78,12 +78,13 @@ This is my progress through learning elixir and functional programming
  - Floating-point: Written with a decimal point. must have atleast one digit before and after the decimal. eg. 1.0, 0.2456, 314159.01e-5, 0.2451e4<br><br>
  - Atoms: atom is a constant representing somethings name. These are written with leading semi-colon( : ), followed by words elixir operators, letters, digits and @, they can end with exclamation or question marks. Arbitrary atoms can be created with double quotes. e.g. valid atoms  :is_binary? , :<> , :=== , :"myfunc/3" , :frank . an atoms name is its value. two atoms with same name will always be equal doesnt matter where or when theyre created.<br><br>
  - Ranges: ranges are represented as <code>start..end</code>. these start and end can be any data type, but if you want to iterate over a range the ends must be integers<br><br>
- - Regular Expressions: regular expression literals are written as <code>~r{pattern}</code> or <code>~r{pattern}opts</code> opts are extra options to alter behaviour of the pattern
+ - Regular Expressions: regular expression literals are written as <code>~r{pattern}</code> or <code>~r{pattern}opts</code> opts are extra options to alter behaviour of the pattern. full docs here <a>https://hexdocs.pm/elixir/Regex.html</a>
  <ul>
   <li><code>f</code> force a pattern match at start of line for multiline</li>
   <li><code>g</code>support named groups</li>
   <li><code>i</code>makes matches case insensitive</li>
   <li><code>m</code> if string has multiple lines <code>^</code>matches start of a line and <code>$</code>. <code>\A and \Z</code>continue to match the end of these lines</li>
+  <li><code>r</code>makes the code <i>reluctant</i> instead of greedy( the + and * are greedy and match as much as possible. but this flag makes them match as little as possible) </li>
  </ul>
 
 
