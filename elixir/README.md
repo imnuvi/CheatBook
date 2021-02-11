@@ -1,5 +1,6 @@
 This is my progress through learning elixir and functional programming
 
+Best place to access resources is <a>https://elixirschool.com/en/lessons/basics/basics/</a>
 
 
 <h1>Getting Started</h1>
