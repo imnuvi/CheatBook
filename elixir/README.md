@@ -96,9 +96,37 @@ This is my progress through learning elixir and functional programming
 
  iex><code>Regex.replace ~r{[aeiou]}, "caterpillar", "h"</code><br>
  "chthrphllhr"
+<br>
+<br>
+<h5>System Types</h5>
+<br>
+- PIDs and Ports: A PID is a reference to a process thats running either locally or remotely. Port is  a resource you're either reading or writing to. The PID of the current process is found by calling <code>self</code><br><br>
+- References: a reference is a globally unique reference. No other reference will be equal to it. A reference is created with the <code>make_ref</code> function
+<br>
+<br>
+<h5>Collection Types</h5>
+<br>
+- Tuples: these are the basic data storage in elixir. It is an ordered collection of values of any type. They offer a flexibility. If the number of elements to store exceed four, then its better to use maps or structs. tuples are written with elements in curly braces and commas separating them. eg.   <code>{ 1, :two, "three" }</code>, <code>{ :ok, "next" }</code><br>
+tuples can be used in pattern Matching<br>
+iex><code>{ status, count, action } = {:ok, 45, "next"}</code><br>
+<code>{:ok, 45, "next"}</code><br>
+Some functions return a tuple if the first element is the atom :ok if there were no errors. For example if we have a file and want to open it,
+iex><code>{ :ok, file } = File.open("myfile")</code><br>
+<code>{ :ok, #PID<0.39.0> }</code><br>
+as the file was successfully opened we have :ok and the PID which is how we access the file.<br>
+iex><code>{ :ok, file } = File.open("Nonexistentfile")</code><br>
+<code>** (MatchError) no match of right hand side value: {:error, :enoent}
+</code><br>
+The Nonexistentfile was not opened and hence it returned a :error causing the match to fail.<br>
+There are three functions that work on tuples only.<br>
+- elem: <code>elem(mytuple,index)</code> returns the value<br>
+- put_elem: <code>put_elem(mytuple,index,value)</code> returns a new tuple with the index replaced with the value<br>
+- tuple_size: <code>tuple_size(mytuple)</code> returns an integer thats the size of the tuple
 
 
-
+<br>
+<br>
+- Lists:
 
 
 <!--  -->
