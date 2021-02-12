@@ -137,7 +137,14 @@ iex> <code>[1, 2, 3] ++ [4, 5]</code><br>
 iex> <code>[1, 2, 3, 4] -- [2, 3, 5, 6]</code><br>
 <code>[1, 4]</code><br>
 iex> <code>1 in [1, 2, 3, 4]</code><br>
-<code>true</code><br>
+<code>true</code>
+<br>
+<br>
+- Keyword Lists: As we will often use lists with key value pairs, elixir offers a shortcut.
+<code>[ name: "coin", job: "flipping", value: "0.5" ]</code> it is converted to<br>
+
+<code>[ {:name, "coin"}, {:job, "flipping"}, {:value, "0.5"} ]</code><br>
+NOTE: mind the spacing and in the second list, keys are atoms
 
 
 
