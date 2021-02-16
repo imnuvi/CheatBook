@@ -158,6 +158,12 @@ iex><code>DB.save record, use_transaction: true, logging: "HIGH"</code>
 
 \- Maps: map is a collection of key/value pairs. The keys can be of any type (lists, atoms, tuples). although most times keys are of same type, thats not a necessity. some examples <code>%{ "TN" => "TamilNadu", "KN" => "Kanada" }</code>, <code>%{ :red => 0xff0000, :green => 0x00ff00, :blue => 0x0000ff }</code>, <code>%{ {:error, :busy} => :retry, {:error, :enoent} => :fatal }</code><br>
 although map and keyword array look the same, maps allow only one key, but array can have the same key multiple times. Also maps are more efficient.<br>
+For Accessing maps the square syntax is used.<br>
+iex><code>states = %{ "PD" => "Pondicherry", "Kl" => "Kerala" }</code><br>
+iex><code>states["PD"]</code>
+<code>"Pondicherry"</code>
+
+
 
 
 <!--  -->
