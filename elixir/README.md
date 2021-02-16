@@ -153,5 +153,11 @@ If a keyword list is the last argument of a function, we can leave off the squar
 iex><code>DB.save record, [ {:use_transaction, true}, {:logging, "HIGH"} ]</code><br>
 can be written as<br>
 iex><code>DB.save record, use_transaction: true, logging: "HIGH"</code>
+<br>
+<br>
+
+\- Maps: map is a collection of key/value pairs. The keys can be of any type (lists, atoms, tuples). although most times keys are of same type, thats not a necessity. some examples <code>%{ "TN" => "TamilNadu", "KN" => "Kanada" }</code>, <code>%{ :red => 0xff0000, :green => 0x00ff00, :blue => 0x0000ff }</code>, <code>%{ {:error, :busy} => :retry, {:error, :enoent} => :fatal }</code><br>
+although map and keyword array look the same, maps allow only one key, but array can have the same key multiple times. Also maps are more efficient.<br>
+
 
 <!--  -->
