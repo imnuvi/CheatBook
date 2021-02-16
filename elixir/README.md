@@ -1,5 +1,8 @@
 This is my progress through learning elixir and functional programming
 
+Best place to access basic resources is <a>https://elixirschool.com/en/lessons/basics/basics/</a>
+
+For detailed and advanced resources <a>https://github.com/h4cc/awesome-elixir</a>
 
 
 <h1>Getting Started</h1>
@@ -119,9 +122,11 @@ iex><code>{ :ok, file } = File.open("Nonexistentfile")</code><br>
 </code><br>
 The Nonexistentfile was not opened and hence it returned a :error causing the match to fail.<br>
 There are three functions that work on tuples only.<br>
-- elem: <code>elem(mytuple,index)</code> returns the value<br>
-- put_elem: <code>put_elem(mytuple,index,value)</code> returns a new tuple with the index replaced with the value<br>
-- tuple_size: <code>tuple_size(mytuple)</code> returns an integer thats the size of the tuple
+<ul>
+<li>elem: <code>elem(mytuple,index)</code> returns the value</li>
+<li>put_elem: <code>put_elem(mytuple,index,value)</code> returns a new tuple with the index replaced with the value</li>
+<li>tuple_size: <code>tuple_size(mytuple)</code> returns an integer thats the size of the tuple</li>
+</ul>
 
 
 <br>
@@ -134,7 +139,30 @@ iex> <code>[1, 2, 3] ++ [4, 5]</code><br>
 iex> <code>[1, 2, 3, 4] -- [2, 3, 5, 6]</code><br>
 <code>[1, 4]</code><br>
 iex> <code>1 in [1, 2, 3, 4]</code><br>
-<code>true</code><br>
+<code>true</code>
+<br>
+<br>
+- Keyword Lists: As we will often use lists with key value pairs, elixir offers a shortcut.
+<code>[ name: "coin", job: "flipping", value: "0.5" ]</code> it is converted to<br>
+
+<code>[ {:name, "coin"}, {:job, "flipping"}, {:value, "0.5"} ]</code><br>
+NOTE: mind the spacing and in the second list, keys are atoms
+<br>
+
+If a keyword list is the last argument of a function, we can leave off the square brackets, so<br>
+iex><code>DB.save record, [ {:use_transaction, true}, {:logging, "HIGH"} ]</code><br>
+can be written as<br>
+iex><code>DB.save record, use_transaction: true, logging: "HIGH"</code>
+<br>
+<br>
+
+\- Maps: map is a collection of key/value pairs. The keys can be of any type (lists, atoms, tuples). although most times keys are of same type, thats not a necessity. some examples <code>%{ "TN" => "TamilNadu", "KN" => "Kanada" }</code>, <code>%{ :red => 0xff0000, :green => 0x00ff00, :blue => 0x0000ff }</code>, <code>%{ {:error, :busy} => :retry, {:error, :enoent} => :fatal }</code><br>
+although map and keyword array look the same, maps allow only one key, but array can have the same key multiple times. Also maps are more efficient.<br>
+For Accessing maps the square syntax is used.<br>
+iex><code>states = %{ "PD" => "Pondicherry", "Kl" => "Kerala" }</code><br>
+iex><code>states["PD"]</code>
+<code>"Pondicherry"</code>
+
 
 
 

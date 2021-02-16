@@ -26,3 +26,12 @@ IO.puts(inspect my_list)
 IO.puts(inspect my_list ++ [4, 5])
 IO.puts(hd(list_2)) # prints the head
 IO.puts(inspect tl(list_2)) # prints the tail
+
+
+# Keyword Lists
+
+my_keyword_list = [ name: "dice", job: "rolling", character: "random"]
+keyword_list2 = [ {:name, "dice"}, {:job, "rolling"}, {:character, "random"}]
+
+IO.puts(inspect my_keyword_list)
+IO.puts(inspect keyword_list2)
