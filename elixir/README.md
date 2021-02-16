@@ -122,9 +122,11 @@ iex><code>{ :ok, file } = File.open("Nonexistentfile")</code><br>
 </code><br>
 The Nonexistentfile was not opened and hence it returned a :error causing the match to fail.<br>
 There are three functions that work on tuples only.<br>
-- elem: <code>elem(mytuple,index)</code> returns the value<br>
-- put_elem: <code>put_elem(mytuple,index,value)</code> returns a new tuple with the index replaced with the value<br>
-- tuple_size: <code>tuple_size(mytuple)</code> returns an integer thats the size of the tuple
+<ul>
+<li>elem: <code>elem(mytuple,index)</code> returns the value</li>
+<li>put_elem: <code>put_elem(mytuple,index,value)</code> returns a new tuple with the index replaced with the value</li>
+<li>tuple_size: <code>tuple_size(mytuple)</code> returns an integer thats the size of the tuple</li>
+</ul>
 
 
 <br>
@@ -145,7 +147,11 @@ iex> <code>1 in [1, 2, 3, 4]</code><br>
 
 <code>[ {:name, "coin"}, {:job, "flipping"}, {:value, "0.5"} ]</code><br>
 NOTE: mind the spacing and in the second list, keys are atoms
+<br>
 
-
+If a keyword list is the last argument of a function, we can leave off the square brackets, so<br>
+iex><code>DB.save record, [ {:use_transaction, true}, {:logging, "HIGH"} ]</code><br>
+can be written as<br>
+iex><code>DB.save record, use_transaction: true, logging: "HIGH"</code>
 
 <!--  -->
