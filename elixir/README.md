@@ -161,9 +161,23 @@ although map and keyword array look the same, maps allow only one key, but array
 For Accessing maps the square syntax is used.<br>
 iex><code>states = %{ "PD" => "Pondicherry", "Kl" => "Kerala" }</code><br>
 iex><code>states["PD"]</code>
-<code>"Pondicherry"</code>
+<code>"Pondicherry"</code><br>
+youll get a key error if theres no matching key.
+<br>
+<br>
 
+\- Binaries: someties data needs to be accessed in bytes like in jpeg and mp3 headers. These are enclosed between <code><<</code>and<code>>></code>
+<br>// To Do. ( I dont understand these binaries in elixir. Need to do research and update ).
 
-
-
+<h3>Operators</h3>
+<ul>
+  <li><code>a === b</code></li> Strict equality( 1 === 1.0 false )
+  <li><code>a !== b</code></li> Strict inequality( 1!== 1.0 true )
+  <li><code>a == b</code></li> Value equality( 1 == 1.0 is true)
+  <li><code>a != b</code></li> Value inequality( 1 != 1.0 is false)
+  <li><code>a > b</code></li>
+  <li><code>a >= b</code></li>
+  <li><code>a < b</code></li>
+  <li><code>a <= b</code></li>
+</ul>
 <!--  -->
