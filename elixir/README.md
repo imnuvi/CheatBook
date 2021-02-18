@@ -181,6 +181,7 @@ youll get a key error if theres no matching key.
   <li><code>a < b</code></li>
   <li><code>a <= b</code></li>
 </ul>
+
 <h5>Boolean operators</h5>
 they expect true or false as first argument.
 <ul>
@@ -188,12 +189,25 @@ they expect true or false as first argument.
   <li><code>a and b</code></li>
   <li><code>not a</code></li>
 </ul>
+
 <h5>Relaxed Boolean operators</h5>
 they expect any values. any value apart from false or nil is interpreted as true.
 <ul>
-  <li><code>a or b</code></li>
-  <li><code>a and b</code></li>
-  <li><code>not a</code></li>
+  <li><code>a || b</code></li>
+  <li><code>a && b</code></li>
+  <li><code>!a</code></li>
+</ul>
+
+<h5>Arithmetic Operators</h5>
+they are +, -, *, /, div, rem.
+/ yields floating point answer. use div(x,y) for integer answer.
+rem(x,y) gives remainder (if x is negative remainder is also negative)
+
+<h5>Join operators<h5>
+<ul>
+  <li><code>binary1 <> binary2</code></li>concatenates two binaries
+  <li><code>list1 ++ list2</code></li>concatenates two lists
+  <li><code>list1 -- list2</code></li>returns elements in list1 but not in list2
 </ul>
 <br>
 <br>
