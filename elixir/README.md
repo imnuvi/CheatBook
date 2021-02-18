@@ -180,4 +180,12 @@ youll get a key error if theres no matching key.
   <li><code>a < b</code></li>
   <li><code>a <= b</code></li>
 </ul>
+<br>
+<br>
+
+<h3>Truth</h3>
+There are three Boolean related characters, true false and nil. nil is treated as false in boolean context.
+In most cases any value that are not nil or false is also considered true. This is called a truthy value.
+all booleans are atoms with the same value. ( :true is same as true )
+
 <!--  -->
