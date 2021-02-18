@@ -170,6 +170,7 @@ youll get a key error if theres no matching key.
 <br>// To Do. ( I dont understand these binaries in elixir. Need to do research and update ).
 
 <h3>Operators</h3>
+<h5>comparison</h5>
 <ul>
   <li><code>a === b</code></li> Strict equality( 1 === 1.0 false )
   <li><code>a !== b</code></li> Strict inequality( 1!== 1.0 true )
@@ -179,6 +180,20 @@ youll get a key error if theres no matching key.
   <li><code>a >= b</code></li>
   <li><code>a < b</code></li>
   <li><code>a <= b</code></li>
+</ul>
+<h5>Boolean operators</h5>
+they expect true or false as first argument.
+<ul>
+  <li><code>a or b</code></li>
+  <li><code>a and b</code></li>
+  <li><code>not a</code></li>
+</ul>
+<h5>Relaxed Boolean operators</h5>
+they expect any values. any value apart from false or nil is interpreted as true.
+<ul>
+  <li><code>a or b</code></li>
+  <li><code>a and b</code></li>
+  <li><code>not a</code></li>
 </ul>
 <br>
 <br>
