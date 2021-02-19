@@ -161,9 +161,60 @@ although map and keyword array look the same, maps allow only one key, but array
 For Accessing maps the square syntax is used.<br>
 iex><code>states = %{ "PD" => "Pondicherry", "Kl" => "Kerala" }</code><br>
 iex><code>states["PD"]</code>
-<code>"Pondicherry"</code>
+<code>"Pondicherry"</code><br>
+youll get a key error if theres no matching key.
+<br>
+<br>
 
+\- Binaries: someties data needs to be accessed in bytes like in jpeg and mp3 headers. These are enclosed between <code><<</code>and<code>>></code>
+<br>// To Do. ( I dont understand these binaries in elixir. Need to do research and update ).
 
+<h3>Operators</h3>
+<h5>comparison</h5>
+<ul>
+  <li><code>a === b</code></li> Strict equality( 1 === 1.0 false )
+  <li><code>a !== b</code></li> Strict inequality( 1!== 1.0 true )
+  <li><code>a == b</code></li> Value equality( 1 == 1.0 is true)
+  <li><code>a != b</code></li> Value inequality( 1 != 1.0 is false)
+  <li><code>a > b</code></li>
+  <li><code>a >= b</code></li>
+  <li><code>a < b</code></li>
+  <li><code>a <= b</code></li>
+</ul>
 
+<h5>Boolean operators</h5>
+they expect true or false as first argument.
+<ul>
+  <li><code>a or b</code></li>
+  <li><code>a and b</code></li>
+  <li><code>not a</code></li>
+</ul>
+
+<h5>Relaxed Boolean operators</h5>
+they expect any values. any value apart from false or nil is interpreted as true.
+<ul>
+  <li><code>a || b</code></li>
+  <li><code>a && b</code></li>
+  <li><code>!a</code></li>
+</ul>
+
+<h5>Arithmetic Operators</h5>
+they are +, -, *, /, div, rem.
+/ yields floating point answer. use div(x,y) for integer answer.
+rem(x,y) gives remainder (if x is negative remainder is also negative)
+
+<h5>Join operators<h5>
+<ul>
+  <li><code>binary1 <> binary2</code></li>concatenates two binaries
+  <li><code>list1 ++ list2</code></li>concatenates two lists
+  <li><code>list1 -- list2</code></li>returns elements in list1 but not in list2
+</ul>
+<br>
+<br>
+
+<h3>Truth</h3>
+There are three Boolean related characters, true false and nil. nil is treated as false in boolean context.
+In most cases any value that are not nil or false is also considered true. This is called a truthy value.
+all booleans are atoms with the same value. ( :true is same as true )
 
 <!--  -->
