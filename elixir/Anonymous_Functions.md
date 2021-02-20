@@ -12,3 +12,5 @@ These functions can be passed as value for other functions or assigned to variab
 
 The implementation follows the arrow syntax. the elems before the arrow are parameters and after the arrow are executed after.
 in order to call a function we use dot syntax, and parameters are given between the parantheses.
+
+If there are no need for arguments they need not be given.
