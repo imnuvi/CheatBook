@@ -209,6 +209,7 @@ rem(x,y) gives remainder (if x is negative remainder is also negative)
   <li><code>list1 ++ list2</code></li>concatenates two lists
   <li><code>list1 -- list2</code></li>returns elements in list1 but not in list2
 </ul>
+<code>a in b</code>tests if a is available in enumerable b.
 <br>
 <br>
 
@@ -217,4 +218,12 @@ There are three Boolean related characters, true false and nil. nil is treated a
 In most cases any value that are not nil or false is also considered true. This is called a truthy value.
 all booleans are atoms with the same value. ( :true is same as true )
 
+
+<h3>Conventions</h3>
+- Identifiers: start with lowercase or underscore. underscore operators, dont get warned about non usage by elixir.( elixir doesnt report if variable is unusedin a pattern match.)
+Module, record, protocol, and behaviour names start with an uppercase letter.
+- Nesting: source files use two character nesting with spaces.
+- Comment: start with #
+follow this for full style guide
+<link>https://github.com/niftyn8/elixir_style_guide</link>
 <!--  -->
