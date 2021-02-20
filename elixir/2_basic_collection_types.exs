@@ -35,3 +35,17 @@ keyword_list2 = [ {:name, "dice"}, {:job, "rolling"}, {:character, "random"}]
 
 IO.puts(inspect my_keyword_list)
 IO.puts(inspect keyword_list2)
+
+
+# Maps
+
+my_map = %{ "TN" => "Tamil Nadu", "Kl" => "Kerala", "KN" => "Karnataka" }
+scores = %{ 1 => "Topper", :two => "Runner", "Three" => "Trailer" }
+
+IO.puts(inspect my_map)
+IO.puts(scores[1])
+IO.puts(scores.two)
+IO.puts(scores["Three"])
+
+
+# 
