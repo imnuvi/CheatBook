@@ -46,6 +46,3 @@ IO.puts(inspect my_map)
 IO.puts(scores[1])
 IO.puts(scores.two)
 IO.puts(scores["Three"])
-
-
-# 
