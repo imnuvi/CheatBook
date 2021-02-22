@@ -88,8 +88,7 @@ For detailed and advanced resources <a>https://github.com/h4cc/awesome-elixir</a
   <li><code>i</code>makes matches case insensitive</li>
   <li><code>m</code> if string has multiple lines <code>^</code>matches start of a line and <code>$</code>. <code>\A and \Z</code>continue to match the end of these lines</li>
   <li><code>r</code>makes the code <i>reluctant</i> instead of greedy( the + and * are greedy and match as much as possible. but this flag makes them match as little as possible) </li>
-  <li><code>s</code> allows " . " to match newlines as well</li>
-  <li><code>u</code> allows unicode specific patttern matching</li>
+  <li><code>s</code> allows " . " to match newline term matching</li>
   <li><code>x</code> extended mode. ignore whitespace and comments</li>
  </ul>
 
@@ -110,7 +109,10 @@ For detailed and advanced resources <a>https://github.com/h4cc/awesome-elixir</a
 <h5>Collection Types</h5>
 <br>
 - Tuples: these are the basic data storage in elixir. It is an ordered collection of values of any type. They offer a flexibility. If the number of elements to store exceed four, then its better to use maps or structs. tuples are written with elements in curly braces and commas separating them. eg.   <code>{ 1, :two, "three" }</code>, <code>{ :ok, "next" }</code><br>
-tuples can be used in pattern Matching<br>
+tuples can be used in pattern Matching. This is the most useful type of matching<br>
+iex><code>{ a, b } = { b, a }</code>
+this swaps a and b values.
+<br>
 iex><code>{ status, count, action } = {:ok, 45, "next"}</code><br>
 <code>{:ok, 45, "next"}</code><br>
 Some functions return a tuple if the first element is the atom :ok if there were no errors. For example if we have a file and want to open it,
@@ -209,6 +211,7 @@ rem(x,y) gives remainder (if x is negative remainder is also negative)
   <li><code>list1 ++ list2</code></li>concatenates two lists
   <li><code>list1 -- list2</code></li>returns elements in list1 but not in list2
 </ul>
+<code>a in b</code>tests if a is available in enumerable b.
 <br>
 <br>
 
@@ -217,4 +220,12 @@ There are three Boolean related characters, true false and nil. nil is treated a
 In most cases any value that are not nil or false is also considered true. This is called a truthy value.
 all booleans are atoms with the same value. ( :true is same as true )
 
+
+<h3>Conventions</h3>
+- Identifiers: start with lowercase or underscore. underscore operators, dont get warned about non usage by elixir.( elixir doesnt report if variable is unusedin a pattern match.)
+Module, record, protocol, and behaviour names start with an uppercase letter.
+- Nesting: source files use two character nesting with spaces.
+- Comment: start with #
+follow this for full style guide
+<link>https://github.com/niftyn8/elixir_style_guide</link>
 <!--  -->
