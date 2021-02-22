@@ -48,3 +48,4 @@ end
 
 
 IO.puts(handle_file.(File.open("./practice_data/data.txt")))
+IO.puts(handle_file.(File.open("nonexistent.txt")))
