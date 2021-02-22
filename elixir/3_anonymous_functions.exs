@@ -49,3 +49,33 @@ end
 
 IO.puts(handle_file.(File.open("./practice_data/data.txt")))
 IO.puts(handle_file.(File.open("nonexistent.txt")))
+
+
+
+
+
+
+
+
+
+# Exercises
+# Crazy fizz buzz. Write a function which takes three arguments. If the first two arguments are 0 print FizzBuzz, if first argument is 0, print fizz, if second argument is 0 print buzz, else print the third element
+
+
+fizzbuzz = fn
+  (0, 0, _) -> "FizzBuzz"
+  (0, _, _) -> "Fizz"
+  (_, 0, _) -> "Buzz"
+  (_, _, val) -> val
+end
+
+IO.puts(fizzbuzz.(8,8,99))
+IO.puts(fizzbuzz.(0,0,44))
+
+
+
+
+
+
+
+#
