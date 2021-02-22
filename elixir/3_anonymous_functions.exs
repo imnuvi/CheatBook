@@ -74,7 +74,24 @@ IO.puts(fizzbuzz.(0,0,44))
 
 
 
+fizz_main = fn
+  (n) -> fizzbuzz.(rem(n,3), rem(n,5), n)
+end
 
+IO.puts(fizz_main.(2))
+IO.puts(fizz_main.(3))
+IO.puts(fizz_main.(4))
+IO.puts(fizz_main.(5))
+IO.puts(fizz_main.(6))
+IO.puts(fizz_main.(7))
+IO.puts(fizz_main.(8))
+IO.puts(fizz_main.(9))
+IO.puts(fizz_main.(10))
+IO.puts(fizz_main.(11))
+IO.puts(fizz_main.(12))
+IO.puts(fizz_main.(13))
+IO.puts(fizz_main.(14))
+IO.puts(fizz_main.(15))
 
 
 
