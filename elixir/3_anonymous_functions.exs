@@ -38,3 +38,13 @@ pair_tuple_to_list = fn { a, b } -> [ a, b ] end
 
 
 IO.puts(pair_tuple_to_list.({ 345, 786 }))
+
+
+# file opener ( multiple bodies in same function )
+handle_file = fn
+  { :ok, file } -> "Read data: #{IO.read(file, :line)}"
+  { _, error } -> "Error: #{:file.format_error(error)}"
+end
+
+
+IO.puts(handle_file.(File.open("./practice_data/data.txt")))

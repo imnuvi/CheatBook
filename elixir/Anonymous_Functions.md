@@ -19,3 +19,8 @@ If there are no need for arguments they need not be given. But empty parameter b
 
 <h3>Multiple Bodies</h3>
 single function can be used for different implementations based on the argument types and values passed. but number of arguments must remain the same.
+A simple way to do this is with pattern matching. A file opened returns :ok atom if successful but returns an error if the file doesnt exist. This can be used to write a file opening function.<br>
+iex><code>open_file = fn</code><br>
+...><code>  {:ok, file} -> "Read data: #{IO.read(file, :line)}"</code><br>
+...><code>  {_, error} -> "Error occoured: #{:file.format_error(error)}"</code><br>
+...><code>end</code><br>
