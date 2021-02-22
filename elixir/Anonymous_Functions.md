@@ -14,3 +14,8 @@ The implementation follows the arrow syntax. the elems before the arrow are para
 in order to call a function we use dot syntax, and parameters are given between the parantheses.
 
 If there are no need for arguments they need not be given. But empty parameter brackets should be used for calling the function.
+
+
+
+<h3>Multiple Bodies</h3>
+single function can be used for different implementations based on the argument types and values passed. but number of arguments must remain the same.

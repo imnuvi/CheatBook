@@ -35,3 +35,6 @@ IO.puts(triple_summer.(5,10,15))
 
 # pair_tuple_to_list
 pair_tuple_to_list = fn { a, b } -> [ a, b ] end
+
+
+IO.puts(pair_tuple_to_list.({ 345, 786 }))
