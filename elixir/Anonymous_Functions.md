@@ -33,11 +33,11 @@ Functions can be nested such that a function actually returns another function.
 
 
 iex><code>fun1 = fn -> fn -> "hello Im inner" end end</code>
-<code>#Function<12.17052888 in :erl_eval.expr/5></code>
-iex><code>fun1.()</code>
-<code>#Function<12.17052888 in :erl_eval.expr/5></code>
-iex><code>fun1.().()</code>
-<code>hello im inner</code>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>fun1.()</code><br>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>fun1.().()</code><br>
+<code>hello im inner</code><br>
 
 
 

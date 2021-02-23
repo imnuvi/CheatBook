@@ -74,6 +74,7 @@ IO.puts(fizzbuzz.(0,0,44))
 
 
 
+#  fizz buzz caller
 fizz_main = fn
   (n) -> fizzbuzz.(rem(n,3), rem(n,5), n)
 end
@@ -92,6 +93,26 @@ IO.puts(fizz_main.(12))
 IO.puts(fizz_main.(13))
 IO.puts(fizz_main.(14))
 IO.puts(fizz_main.(15))
+
+
+
+
+# functions can return function ( a functionception )
+outerfunc = fn ->
+  fn ->
+    "hello im inner"
+  end
+end
+
+innerfunc = outerfunc.()
+
+
+IO.puts(inspect outerfunc.())
+IO.puts(innerfunc.())
+IO.puts(outerfunc.().())
+
+
+
 
 
 
