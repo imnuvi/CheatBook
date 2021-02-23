@@ -24,3 +24,22 @@ iex><code>open_file = fn</code><br>
 ...><code>  {:ok, file} -> "Read data: #{IO.read(file, :line)}"</code><br>
 ...><code>  {_, error} -> "Error occoured: #{:file.format_error(error)}"</code><br>
 ...><code>end</code><br>
+
+
+
+<h3>Functions can return functions</h3>
+
+Functions can be nested such that a function actually returns another function.
+
+
+iex><code>fun1 = fn -> fn -> "hello Im inner" end end</code>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>fun1.()</code><br>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>fun1.().()</code><br>
+<code>hello im inner</code><br>
+
+
+
+
+<!--  -->
