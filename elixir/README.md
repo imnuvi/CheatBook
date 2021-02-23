@@ -228,4 +228,14 @@ Module, record, protocol, and behaviour names start with an uppercase letter.
 - Comment: start with #
 follow this for full style guide
 <link>https://github.com/niftyn8/elixir_style_guide</link>
+
+
+
+
+<h3>String LIterals</h3>
+- elixir has the double quote string literal syntax, where # can be used with {} for carrying out functions.
+
+  <code>IO.puts("This is a sum #{1 + 3}")</code>
+  prints
+  This is a sum 4
 <!--  -->
