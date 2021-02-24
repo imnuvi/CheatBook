@@ -38,7 +38,21 @@ iex><code>fun1.()</code><br>
 <code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
 iex><code>fun1.().()</code><br>
 <code>hello im inner</code><br>
+<br>
 
+
+
+<h3>Function scopes</h3>
+
+In the previous example, We say a nested inner function. This inner function has access to variables in the outer function
+
+iex><code>fun2 = fn name -> ( fn -> "hello Im #{name}" )  end end</code>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>dave_greeter = fun2.("Dave")</code><br>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>dave_greeter.()</code><br>
+<code>hello im Dave</code><br>
+<br>
 
 
 

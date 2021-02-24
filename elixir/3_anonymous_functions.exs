@@ -114,7 +114,18 @@ IO.puts(outerfunc.().())
 
 
 
+# function scoping
+greetfunc = fn
+  name ->
+    fn ->
+      "hello #{name}"
+    end
+  end
 
+IO.puts(inspect greetfunc.("Jimmy"))
+
+john_greeter = greetfunc.("john")
+IO.puts(john_greeter.())
 
 
 #
