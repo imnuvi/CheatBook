@@ -128,4 +128,21 @@ john_greeter = greetfunc.("john")
 IO.puts(john_greeter.())
 
 
+
+# parameterized functions. n multiplier.
+
+mult_n = fn n -> (fn value -> n * value end) end
+
+mult_5 = mult_n.(5)
+mult_2 = mult_n.(2)
+
+
+IO.puts(mult_5.(19))
+IO.puts(mult_2.(44))
+
+IO.puts(mult_n.(2).(44))
+
+
+
+
 #
