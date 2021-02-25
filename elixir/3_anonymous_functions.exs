@@ -142,6 +142,7 @@ IO.puts(mult_2.(44))
 
 IO.puts(mult_n.(2).(44))
 
+
 # prefixer
 
 prefixer = fn pref ->
@@ -154,6 +155,23 @@ ms = prefixer.("Ms.")
 
 IO.puts(ms.("jasmine"))
 IO.puts(prefixer.("Hello").("Elixir"))
+
+
+
+
+# Functions as arguments. 2 multiplier
+
+times_2 = fn n -> n * 2 end
+
+apply = fn (func, value) -> func.(value) end
+
+IO.puts(apply.(times_2, 78))
+IO.puts(apply.(mult_5, 23))
+
+
+
+
+
 
 
 

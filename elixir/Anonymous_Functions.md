@@ -72,4 +72,19 @@ iex><code>mult_2.(44)</code><br>
 88<br>
 <br>
 
+
+
+<h3>Passing functions as arguments</h3>
+
+functions are just values and can be passed into other functions<br>
+
+iex><code>times_2 = fn n -> n * 2 end</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>apply = fn (func, value) -> func.(value) end</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>apply.(times_2,6)</code><br>
+12<br>
+<br>
+
+
 <!--  -->
