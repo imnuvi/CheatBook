@@ -56,4 +56,19 @@ iex><code>dave_greeter.()</code><br>
 
 
 
+
+<h3>Parameterized funcitons</h3>
+
+We can use inner and outer functions like decorators with both functions taking a parameter. For example<br>
+iex><code>mult_n = fn n -> (fn value -> n * value end) end</code><br>
+#Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>mult_5 = mult_n.(5)</code><br>
+#Function<12.17052888 in :erl_eval.expr/5>
+iex><code>mult_2 = mult_n.(2)</code><br>
+#Function<12.17052888 in :erl_eval.expr/5>
+iex><code>mult_5.(90)</code><br>
+450
+iex><code>mult_2.(44)</code><br>
+88
+
 <!--  -->
