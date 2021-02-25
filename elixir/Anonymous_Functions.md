@@ -87,4 +87,25 @@ iex><code>apply.(times_2,6)</code><br>
 <br>
 
 
+
+<h3>Higher order functions</h3>
+
+The capability to pass funcitons as arguments will be used everywhere. any function that takes another function as argument is called a higher order function.
+enum.map is one such higher order function which takes an enumerable object and applies the funciton to every element in the enum
+
+<br>
+
+iex><code>test_list = [1, 2, 3, 4, 7, 90]</code><br>
+[1, 2, 3, 4, 7, 90]<br>
+iex><code>Enum.map(test_list, fn x -> x * 2 end )</code><br>
+[2, 4, 6, 8, 14, 180]<br>
+iex><code>Enum.map(test_list, fn x -> x * x end )</code><br>
+[1, 4, 9, 16, 49, 8100]<br>
+iex><code>Enum.map(test_list, fn x -> x > 5 end )</code><br>
+[false, false, false, false, true, true]<br>
+
+
+
+
+
 <!--  -->

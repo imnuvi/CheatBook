@@ -170,9 +170,14 @@ IO.puts(apply.(mult_5, 23))
 
 
 
+#  Higher order functions
+
+test_list = [1, 2, 3, 4, 7, 90]
 
 
-
+IO.puts(inspect Enum.map(test_list, times_2))
+IO.puts(inspect Enum.map(test_list, fn n -> n * n end ))
+IO.puts(inspect Enum.map(test_list, fn n -> n > 5 end ))
 
 
 
