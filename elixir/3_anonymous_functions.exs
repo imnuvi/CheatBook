@@ -114,6 +114,74 @@ IO.puts(outerfunc.().())
 
 
 
+# function scoping
+greetfunc = fn
+  name ->
+    fn ->
+      "hello #{name}"
+    end
+  end
+
+IO.puts(inspect greetfunc.("Jimmy"))
+
+john_greeter = greetfunc.("john")
+IO.puts(john_greeter.())
+
+
+
+# parameterized functions. n multiplier.
+
+mult_n = fn n -> (fn value -> n * value end) end
+
+mult_5 = mult_n.(5)
+mult_2 = mult_n.(2)
+
+
+IO.puts(mult_5.(19))
+IO.puts(mult_2.(44))
+
+IO.puts(mult_n.(2).(44))
+
+
+# prefixer
+
+prefixer = fn pref ->
+  (fn name ->
+    pref <> " " <> name
+  end)
+end
+
+ms = prefixer.("Ms.")
+
+IO.puts(ms.("jasmine"))
+IO.puts(prefixer.("Hello").("Elixir"))
+
+
+
+
+# Functions as arguments. 2 multiplier
+
+times_2 = fn n -> n * 2 end
+
+apply = fn (func, value) -> func.(value) end
+
+IO.puts(apply.(times_2, 78))
+IO.puts(apply.(mult_5, 23))
+
+
+
+#  Higher order functions
+
+test_list = [1, 2, 3, 4, 7, 90]
+
+
+IO.puts(inspect Enum.map(test_list, times_2))
+IO.puts(inspect Enum.map(test_list, fn n -> n * n end ))
+IO.puts(inspect Enum.map(test_list, fn n -> n > 5 end ))
+
+
+
+
 
 
 

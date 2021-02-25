@@ -38,6 +38,72 @@ iex><code>fun1.()</code><br>
 <code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
 iex><code>fun1.().()</code><br>
 <code>hello im inner</code><br>
+<br>
+
+
+
+<h3>Function scopes</h3>
+
+In the previous example, We say a nested inner function. This inner function has access to variables in the outer function
+
+iex><code>fun2 = fn name -> ( fn -> "hello Im #{name}" )  end end</code>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>dave_greeter = fun2.("Dave")</code><br>
+<code>#Function<12.17052888 in :erl_eval.expr/5></code><br>
+iex><code>dave_greeter.()</code><br>
+<code>hello im Dave</code><br>
+<br>
+
+
+
+
+<h3>Parameterized funcitons</h3>
+
+We can use inner and outer functions like decorators with both functions taking a parameter. For example<br>
+iex><code>mult_n = fn n -> (fn value -> n * value end) end</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>mult_5 = mult_n.(5)</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>mult_2 = mult_n.(2)</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>mult_5.(90)</code><br>
+450<br>
+iex><code>mult_2.(44)</code><br>
+88<br>
+<br>
+
+
+
+<h3>Passing functions as arguments</h3>
+
+functions are just values and can be passed into other functions<br>
+
+iex><code>times_2 = fn n -> n * 2 end</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>apply = fn (func, value) -> func.(value) end</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+iex><code>apply.(times_2,6)</code><br>
+12<br>
+<br>
+
+
+
+<h3>Higher order functions</h3>
+
+The capability to pass funcitons as arguments will be used everywhere. any function that takes another function as argument is called a higher order function.
+enum.map is one such higher order function which takes an enumerable object and applies the funciton to every element in the enum
+
+<br>
+
+iex><code>test_list = [1, 2, 3, 4, 7, 90]</code><br>
+[1, 2, 3, 4, 7, 90]<br>
+iex><code>Enum.map(test_list, fn x -> x * 2 end )</code><br>
+[2, 4, 6, 8, 14, 180]<br>
+iex><code>Enum.map(test_list, fn x -> x * x end )</code><br>
+[1, 4, 9, 16, 49, 8100]<br>
+iex><code>Enum.map(test_list, fn x -> x > 5 end )</code><br>
+[false, false, false, false, true, true]<br>
+
 
 
 
