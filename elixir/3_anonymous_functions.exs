@@ -142,6 +142,23 @@ IO.puts(mult_2.(44))
 
 IO.puts(mult_n.(2).(44))
 
+# prefixer
+
+prefixer = fn pref ->
+  (fn name ->
+    pref <> " " <> name
+  end)
+end
+
+ms = prefixer.("Ms.")
+
+IO.puts(ms.("jasmine"))
+IO.puts(prefixer.("Hello").("Elixir"))
+
+
+
+
+
 
 
 
