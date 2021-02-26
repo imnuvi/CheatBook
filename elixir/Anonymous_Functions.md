@@ -57,7 +57,7 @@ iex><code>dave_greeter.()</code><br>
 
 
 
-<h3>Parameterized funcitons</h3>
+<h3>Parameterized functions</h3>
 
 We can use inner and outer functions like decorators with both functions taking a parameter. For example<br>
 iex><code>mult_n = fn n -> (fn value -> n * value end) end</code><br>
@@ -90,8 +90,8 @@ iex><code>apply.(times_2,6)</code><br>
 
 <h3>Higher order functions</h3>
 
-The capability to pass funcitons as arguments will be used everywhere. any function that takes another function as argument is called a higher order function.
-enum.map is one such higher order function which takes an enumerable object and applies the funciton to every element in the enum
+The capability to pass functions as arguments will be used everywhere. any function that takes another function as argument is called a higher order function.
+enum.map is one such higher order function which takes an enumerable object and applies the function to every element in the enum
 
 <br>
 
@@ -103,6 +103,31 @@ iex><code>Enum.map(test_list, fn x -> x * x end )</code><br>
 [1, 4, 9, 16, 49, 8100]<br>
 iex><code>Enum.map(test_list, fn x -> x > 5 end )</code><br>
 [false, false, false, false, true, true]<br>
+<br>
+
+
+<h3>the & operator</h3>
+
+creating short functions has a useful shortcut. The "&" converts everything that follows it into a function. the arguments are given as &1 &2 and so on.
+
+iex><code>add_ten = &(&1 + 10)</code>  # is the same as add_ten = fn n -> n+10 end<br>
+Function<6.17052888 in :erl_eval.expr/5><br>
+iex><code>add_one.(44)</code>
+54<br>
+iex><code>square = &(&1 * &1)</code>
+Function<6.17052888 in :erl_eval.expr/5><br>
+iex><code>square.(8)</code>
+64<br>
+iex>speak = &(IO.puts(&1))
+&IO.puts/1<br>
+iex>speak.("hello")<br>
+hello<br>
+:ok<br>
+<br>
+
+
+
+Elixir is clever and knows if a function is predefined, and shows the actual reference to the function. 
 
 
 
