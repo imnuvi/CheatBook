@@ -110,8 +110,24 @@ iex><code>Enum.map(test_list, fn x -> x > 5 end )</code><br>
 
 creating short functions has a useful shortcut. The "&" converts everything that follows it into a function. the arguments are given as &1 &2 and so on.
 
+iex><code>add_ten = &(&1 + 10)</code>  # is the same as add_ten = fn n -> n+10 end<br>
+Function<6.17052888 in :erl_eval.expr/5><br>
+iex><code>add_one.(44)</code>
+54<br>
+iex><code>square = &(&1 * &1)</code>
+Function<6.17052888 in :erl_eval.expr/5><br>
+iex><code>square.(8)</code>
+64<br>
+iex>speak = &(IO.puts(&1))
+&IO.puts/1<br>
+iex>speak.("hello")<br>
+hello<br>
+:ok<br>
+<br>
 
 
+
+Elixir is clever and knows if a function is predefined, and shows the actual reference to the function. 
 
 
 
