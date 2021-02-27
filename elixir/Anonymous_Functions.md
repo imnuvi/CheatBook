@@ -161,13 +161,14 @@ ampersand "&" is the easiest way to pass funcitons to other Functions
 iex><code>Enum.map( [1, 2, 3 ,4], &(&1 + 1))</code><br>
 [2,3,4,5]<br>
 iex><code>Enum.map( [1, 2, 3 ,4], &(&1 * &1))</code><br>
-[1,4,9,16]
+[1,4,9,16]<br>
 iex><code>Enum.map( [1, 2, 3 ,4], &(&1 < 3))</code><br>
-[true,true,false,false]
+[true,true,false,false]<br>
 
 
+<br>
 
-
+Functions are heart of elixir. They transform data from one form to another. We have seen anonymous functions that can be asssigned to variables. We are yet to see named functions.
 
 
 
