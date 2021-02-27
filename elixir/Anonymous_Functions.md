@@ -137,7 +137,38 @@ iex><code>rnd = &(Float.round(&1,&2))</code><br>
 iex><code>rnd_1 = &(Float.round(&2,&1))</code><br>
 Function<12.17052888 in :erl_eval.expr/5><br>
 
-Here notice the order of arguments in first and second assignments. first one is in correct order so, it sows the erlang round function. 
+Here notice the order of arguments in first and second assignments. first one is in correct order so, it shows the erlang round function.
+
+
+<br>
+<br>
+
+Theres another form of ampersand shortcut. Here you can give the name and number of parameters of the function. But since we still havent seen named functions we will just see the syntax.
+Length is a function of the erlang vm.
+
+<br>
+iex><code>l = &length/1</code><br>
+&:erlang.length/1<br>
+iex><code>l.([1,2,3,4,5])</code><br>
+5<br>
+
+
+
+ampersand "&" is the easiest way to pass funcitons to other Functions
+
+<br>
+
+iex><code>Enum.map( [1, 2, 3 ,4], &(&1 + 1))</code><br>
+[2,3,4,5]<br>
+iex><code>Enum.map( [1, 2, 3 ,4], &(&1 * &1))</code><br>
+[1,4,9,16]
+iex><code>Enum.map( [1, 2, 3 ,4], &(&1 < 3))</code><br>
+[true,true,false,false]
+
+
+
+
+
 
 
 <!--  -->
