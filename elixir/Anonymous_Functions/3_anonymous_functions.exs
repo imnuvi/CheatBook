@@ -1,3 +1,9 @@
+#  some anonymous functions, syntax and variables
+
+
+
+
+
 summer = fn (a,b) -> a + b end
 
 # the brackets can be skipped, but needs to be included during function call
