@@ -127,10 +127,17 @@ hello<br>
 
 
 
-Elixir is clever and knows if a function is predefined, and shows the actual reference to the function. 
+Elixir is clever and knows if a function is predefined, and shows the actual reference to the function.
 
 
+Arguments must be in correct order to work.<br>
 
+iex><code>rnd = &(Float.round(&1,&2))</code><br>
+&Float.round/2<br>
+iex><code>rnd_1 = &(Float.round(&2,&1))</code><br>
+Function<12.17052888 in :erl_eval.expr/5><br>
+
+Here notice the order of arguments in first and second assignments. first one is in correct order so, it sows the erlang round function. 
 
 
 <!--  -->
