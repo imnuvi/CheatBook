@@ -29,3 +29,17 @@ multiple lines are grouped with parantheses.
 
 
 The first syntax is just syntactic sugar, and is enough.
+
+
+<h3>Function calls and pattern matching</h3>
+
+Just like with anonymous functions with multiple bodies, named functions use the same pattern matching technique to match from multiple definitions of the function. When a function is called, elixir tries matching the argument list provided with the argument types defined and checks to see if it matches.(all funcitons must have same number of arguments( arity )), Just like how we did fizz buzz. check out the anonymous functions file.
+
+
+
+
+
+
+
+
+<!--  -->
