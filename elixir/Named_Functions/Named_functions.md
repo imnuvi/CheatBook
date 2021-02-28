@@ -8,3 +8,14 @@ compile the file with c command. Notice that arguments are strings and need to b
 
 
 Now the function can be called with module.function. So Times.double(55) will give 110
+
+
+
+in elixir the arity(number of arguments) is important. two functions with same name but different arguments are considered absolutely different funcitons. never use the same name for functions that do different things.
+
+
+
+
+The do...end is one way of grouping expression. But its not the underlying syntax. The underlying syntax looks like <code>def double(n), do: n * 2 </code>
+
+multiple lines are grouped with parantheses.
