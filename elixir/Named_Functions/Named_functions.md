@@ -19,3 +19,13 @@ in elixir the arity(number of arguments) is important. two functions with same n
 The do...end is one way of grouping expression. But its not the underlying syntax. The underlying syntax looks like <code>def double(n), do: n * 2 </code>
 
 multiple lines are grouped with parantheses.
+
+
+<code>def greet(name, greeting) do: (<br>
+  IO.puts greeting<br>
+  IO.puts  "Howre you doing #{name}"<br>
+  )</code>
+
+
+
+The first syntax is just syntactic sugar, and is enough.
