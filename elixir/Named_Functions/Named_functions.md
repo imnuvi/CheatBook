@@ -43,7 +43,7 @@ We have used pattern matching to choose which function to execute. But what is w
 
 
 
-
+In our factorial function, if we give a negative argument, the number will never become 0, so if we give a guard clause which checks if a negative number is present nothing will match and so negative numbers will throw error.
 
 
 
