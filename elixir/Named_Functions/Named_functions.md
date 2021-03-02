@@ -36,7 +36,14 @@ The first syntax is just syntactic sugar, and is enough.
 Just like with anonymous functions with multiple bodies, named functions use the same pattern matching technique to match from multiple definitions of the function. When a function is called, elixir tries matching the argument list provided with the argument types defined and checks to see if it matches.(all funcitons must have same number of arguments( arity )), Just like how we did fizz buzz. check out the anonymous functions file.
 
 
+<h3>Guard clauses</h3>
 
+We have used pattern matching to choose which function to execute. But what is we need to distinguish types or on the values of the arguments. Here we use guard clauses. These are attached to a function with the "when". elixir first matches and then executes the when predicates and executes the function if any one of the predicates is true
+
+
+
+
+In our factorial function, if we give a negative argument, the number will never become 0, so if we give a guard clause which checks if a negative number is present nothing will match and so negative numbers will throw error.
 
 
 
