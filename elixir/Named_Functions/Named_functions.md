@@ -63,5 +63,13 @@ In our factorial function, if we give a negative argument, the number will never
 
 
 
+<h3>Default Parameters<h3>
+
+Default parameters are given with the <code>arg_name \\ default_value</code> syntax. Now elixir is weird. If you have four required parameters and two middle ones are defaulted (p1, p2 \\ 5, p3 \\ 4, p4) and you just give two values to the function,(lets say 10 and 20), elixir will match p1 as 10 and p4 as 20. p2 and p3 assume their default values. So be careful when using the default values. Better frame the function such that default values are at the end of the argument list. If the number of given arguments is greater than required, then the default arguments are overrided.
+
+
+
+
+
 
 <!--  -->
