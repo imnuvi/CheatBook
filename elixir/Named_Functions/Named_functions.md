@@ -50,7 +50,14 @@ In our factorial function, if we give a negative argument, the number will never
 <h5>Guard clause limitations</h5>
 
 <ul>
-  <li></li>
+  <li>comparison operators: ==, !=, ===, !==, >=, <=, >, < </li>
+  <li>boolean: and, or, not (|| and && not allowed)</li>
+  <li>arithmetic: +, -, *, /</li>
+  <li>join: <>, ++ </li>
+  <li>the <code>in</code> operator</li>
+  <li>type check functions: these are built in erlang functions that return true if the argument is given type:
+  is_atom, is_binary, is_bitstring, is_boolean, is_exception, is_float, is_integer, is_list, is_map, is_number, is_pid, is_port, is_record, is_reference, is_tuple</li>
+  <li>other built in functions that return values:  abs(number), bit_size(bytestring), div(number,number), elem(tuple,n), float(term), hd(list), length(list), node(), node(pid|ref|port), rem(number,number), round(number), self(), tl(list), trunc(number), tuple_size(tuple)</li>
 </ul>
 
 
