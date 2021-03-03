@@ -47,6 +47,14 @@ In our factorial function, if we give a negative argument, the number will never
 
 
 
+<h5>Guard clause limitations</h5>
+
+<ul>
+  <li></li>
+</ul>
+
+
+
 
 
 <!--  -->
