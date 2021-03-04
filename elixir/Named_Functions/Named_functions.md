@@ -179,7 +179,53 @@ Directives make working with modules easier. They are lexicographically scoped(s
   eg: alias MIx.Tasks.Doctest, as: Doctest
 
   </li>
+
+  <li><h6>Require directive</h6>
+  you have to require a module if you want to use a macro defined in the module. discuss later.
+  </li>
 </ul>
+
+
+
+
+
+
+
+
+<h3>Module attributes</h3>
+
+Elixir modules have associated metadata called attributes such as author
+
+the syntax is <code>@name value</code>
+
+this works only at the top level of the module. wont work inside the functions definition. You can redefine a value multiple times. The value will be whatever was given at the latest definition. You can access attributes within functions witht the @name value. These are technically not variables.use them for configuration and metadata only.
+
+
+
+
+
+
+<h5>Module names</h5>
+
+module names are just atoms. for example the IO module is created by elixir as an atom called  Elixir.IO.
+
+so is_atom(IO) will yield true.
+
+a function can also be called with its atom.
+
+<code>:"Elixir.IO".puts 123</code> is a valid call for IO module and puts function within it.
+
+
+This is useful if we want to call erlang modules within elixir. so lets say we want to format a number to three character wide decimal field we use io.format function of erlang and call it as :io.format("the number is ~3.1f~n", [5.678])
+the number is 5.7
+
+
+
+<h6>Assignments</h6>
+
+- convert float to string with two decimal digits:  <code>:erlang.float_to_binary(float, decimals: 2)</code>
+
+
 
 
 
