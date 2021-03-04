@@ -234,6 +234,18 @@ the number is 5.7
 <code>:"Elixir.System".monotonic_time()</code>
 
 
+- get extension of a file:
+<code>:"Elixir.Path".extname("myfile")</code>
+
+- return working directory of a process
+<code>:"Elixir.File.cwd"</code> or
+<code>File.cwd</code>
+
+- convert string containing json to elixir data structures.
+ Poison library.
+
+- execute a command in os shell.
+<code>System.cmd "echo", ["hello world"]</code>
 
 
 
