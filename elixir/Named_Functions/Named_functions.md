@@ -103,5 +103,28 @@ end<br>
 
 
 
+<h3>Private Functions</h3>
+
+Private functions are functions that can only be called from within the module it is defined in. It is defined with the <code>defp</code> keyword. You can have multiple heads of private functions but you cannot have some public and others private.
+
+
+
+
+<h3>The Pipe operator</h3>
+
+The pipe operator is a syntax for chaining functions( like then in python. ) the |> is the syntax for piping.
+It takes the value of the expression to the left of the pipe and sends it to the function on its right as the first argument.
+
+eg. val |> f(a,b) is same as calling f(val,a,b)
+<br>
+
+list |> sales_tax(2013) |> prepare_filing  is same as
+
+prepare_filing(sales_tax(list,2013))
+
+
+the pipes can be split in separate  lines, but can also be chained in a single line
+
+
 
 <!--  -->
