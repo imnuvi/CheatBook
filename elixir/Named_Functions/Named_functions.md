@@ -132,7 +132,13 @@ iex><code>(1..10) |> Enum.map(&(&1*&1)) |> Enum.filter(&(&1 < 40))</code><br>
 
 Always use parantheses around function parameters.
 
-Pipes help us write programs that follow the programs specs.
+Pipes help us write programs that follow the program specs we have written. (kinda like a  to do list)
+
+
+
+
+
+<h3>
 
 
 
