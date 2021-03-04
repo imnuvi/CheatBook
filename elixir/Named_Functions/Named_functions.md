@@ -138,7 +138,52 @@ Pipes help us write programs that follow the program specs we have written. (kin
 
 
 
-<h3>
+<h3>Modules</h3>
+
+Modules provide namespace for things we define. We have already seen encapsulation of named functions within modules. They can also encapsulate structs, macros, protocols, and other modules. With nested modules, we need to call the module with both the module names separated by dot. Module nesting is an illusion and all modules are defined at base level.
+
+
+eg: <br>
+defmodule mixer.tasks do<br>
+  def run do<br>
+  end<br>
+end<br>
+
+is same as
+
+defmodule mixer do<br>
+  defmodule tasks do<br>
+    def run do<br>
+    end<br>
+  end<br>
+end<br>
+
+
+
+
+<h4>Directives</h4>
+
+Directives make working with modules easier. They are lexicographically scoped(start at where they are encountered end where the current scope end.)
+
+
+<ul>
+  <li><h6>Import directive</h6> This brings the modules and functions into the current scope so the module name need not be specified every time. This can be helpful if you use the same functions over and over. The syntax is <code>import Module [ ,only: | except:]</code>the only: and except: can be used. by following them with a list of function: arity values
+  eg: import List, only: [ flatten: 1, duplicate: 2 ]
+  </li>
+
+  <li>
+  <h6>Alias directive</h6>
+  The alias directive creates an alias for a module.
+  syntax is <code>alias Module_name, as: to_name</code>
+
+  eg: alias MIx.Tasks.Doctest, as: Doctest
+
+  </li>
+</ul>
+
+
+
+
 
 
 
