@@ -126,5 +126,14 @@ prepare_filing(sales_tax(list,2013))
 the pipes can be split in separate  lines, but can also be chained in a single line
 
 
+iex><code>(1..10) |> Enum.map(&(&1*&1)) |> Enum.filter(&(&1 < 40))</code><br>
+<code>[1,4,9,16,25,36]</code>
+
+
+Always use parantheses around function parameters.
+
+Pipes help us write programs that follow the programs specs.
+
+
 
 <!--  -->
