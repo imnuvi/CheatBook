@@ -209,6 +209,9 @@ this works only at the top level of the module. wont work inside the functions d
 
 module names are just atoms. for example the IO module is created by elixir as an atom called  Elixir.IO.
 
+
+Note that all modules will have the elixir atom before them.
+
 so is_atom(IO) will yield true.
 
 a function can also be called with its atom.
@@ -226,6 +229,9 @@ the number is 5.7
 - convert float to string with two decimal digits:  <code>:erlang.float_to_binary(float, decimals: 2)</code>
 
 
+- get value of os environment variables:
+<code>:"Elixir.System".get_env("Variable")</code>
+<code>:"Elixir.System".monotonic_time()</code>
 
 
 
