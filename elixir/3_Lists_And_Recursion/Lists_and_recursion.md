@@ -32,3 +32,9 @@ This pipe syntax can be used with pattern matching for matching the tail value a
 
 note:
 Remember when debugging your code always inspect the list and convert it to a string for getting the actual list
+
+
+
+Now that we know about the head tail syntax, we can now construct a new list if we have a value and a list.
+
+Now lets write a function for finding the length of a list. Here we define a function which matches head | tail, and it does a recursive call to itself with its tail. or it matches an empty list where length is 0.
