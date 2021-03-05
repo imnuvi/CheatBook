@@ -28,3 +28,7 @@ This pipe syntax can be used with pattern matching for matching the tail value a
 <code>[ a, b, c] = [ 1, 2, 3]</code>  # a=1, b=2, c=3
 
 <code>[ head | tail ] = [ 1, 2, 3]</code> # head = 1, tail = [ b, c ]
+
+
+note:
+Remember when debugging your code always inspect the list and convert it to a string for getting the actual list
