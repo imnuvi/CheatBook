@@ -38,3 +38,9 @@ Remember when debugging your code always inspect the list and convert it to a st
 Now that we know about the head tail syntax, we can now construct a new list if we have a value and a list.
 
 Now lets write a function for finding the length of a list. Here we define a function which matches head | tail, and it does a recursive call to itself with its tail. or it matches an empty list where length is 0.
+
+
+
+
+
+<b><i>NOTE:</b></i> elixir has some crazy string representations. the double quote and single quote representations. In double quote notation, the string is stored in contiguous memory locations . but single quote strings are stored as lists with values. So <code>[ 99, 97, 116]</code> actually is a representation of 'cat'
