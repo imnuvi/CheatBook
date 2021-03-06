@@ -11,6 +11,12 @@ IO.puts("the list head and tail are #{head}, #{to_string(inspect tail)}")
 
 
 defmodule Mylist do
+
+  # length function
   def len( [ ] ), do: 0
   def len( [ head | tail ] ), do: 1 + len( tail )
+
+  # square a list function
+  def square( [] ), do: []
+  def square( [ head | tail ] ), do: [ head * head | square( tail ) ]
 end
