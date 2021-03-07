@@ -44,3 +44,22 @@ Now lets write a function for finding the length of a list. Here we define a fun
 
 
 <b><i>NOTE:</b></i> elixir has some crazy string representations. the double quote and single quote representations. In double quote notation, the string is stored in contiguous memory locations . but single quote strings are stored as lists with values. So <code>[ 99, 97, 116]</code> actually is a representation of 'cat'
+
+
+
+Square a list, and add one to a list are in the [recursive_lists.exs](./recursive_lists.exs) file
+
+<h3></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

@@ -19,4 +19,8 @@ defmodule Mylist do
   # square a list function
   def square( [] ), do: []
   def square( [ head | tail ] ), do: [ head * head | square( tail ) ]
+
+  # add 1 to every element of the list
+  def add1( [] ), do: []
+  def add1( [ head | tail ] ), do: [ head + 1 | add1( tail ) ]
 end
