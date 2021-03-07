@@ -49,7 +49,9 @@ Now lets write a function for finding the length of a list. Here we define a fun
 
 Square a list, and add one to a list are in the [recursive_lists.exs](./recursive_lists.exs) file
 
-<h3></h3>
+<h3>Creating a map</h3>
+
+If we look at all the recursive functions, we can see that it follows a pattern, where if an empty list is present do nothing. All other logic is written in the second part of the function. where something is done to the head and the tail is called. We are going to generalise the definition and write a map function which takes another function and a list and returns a new list witht the function performed.
 
 
 
