@@ -40,7 +40,15 @@ defmodule Mylist do
   def sum( [ head | tail ], value ), do: sum( tail, head + value )
 
   # another way is to define the sum function is with a public function that passes in 0 as default parameter and calls the private sum method.
-  
+
+
+  # reduce function
+  def reduce( [], value, _ ), do: value
+  def reduce( [ head | tail ] , value, func), do
+    reduce( tail, func(head, value), func)
+  end
+
+
 
 
 
