@@ -44,8 +44,8 @@ defmodule Mylist do
 
   # reduce function
   def reduce( [], value, _ ), do: value
-  def reduce( [ head | tail ] , value, func), do
-    reduce( tail, func(head, value), func)
+  def reduce( [ head | tail ] , value, func) do
+    reduce( tail, func.(head, value), func)
   end
 
 
