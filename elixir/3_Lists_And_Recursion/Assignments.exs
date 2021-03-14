@@ -27,8 +27,11 @@ defmodule MyRecursion do
 
   # caesar cypher that gets a string( which is actually a list ) and adds a number n to each element.
   def caesar( [ ], n ), do: []
-  def caesar( [ head | tail ], n ) do
+  def caesar( [ head | tail ], n ) when head+n < 123 do
     [ head + n | caesar(tail, n) ]
+  end
+  def caesar( [ head | tail ], n ) when head+n > 123 do
+    [ rem((head+n - 122), 26) + 97 | caesar(tail, n) ]
   end
 
 end
