@@ -72,7 +72,13 @@ so we return the value of sum if list is empty or we return the sum plus the cur
 
 
 
-in order to generalise this funciton we can create a reduce function which takes a list, a function and an initial value, as its parameters and applies the function to every element in the list and returns the final value. 
+in order to generalise this funciton we can create a reduce function which takes a list, a function and an initial value, as its parameters and applies the function to every element in the list and returns the final value.
+
+( try to create a filter function )
+
+
+
+<h3>Complex list patterns</h3>
 
 
 
