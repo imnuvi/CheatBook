@@ -64,7 +64,7 @@ its the same as the square function we wrote earlier.
 
 
 
-<h3>Creating a Reduce function</h3>
+<h3>Creating a reduce function</h3>
 
 If we want to keep track of a variable during a recursive function, we cannot keep it in the global namespace or the function namespace( purity. ) so we pass in the variable as another function parameter.
 
@@ -72,10 +72,7 @@ so we return the value of sum if list is empty or we return the sum plus the cur
 
 
 
-
-
-
-
+in order to generalise this funciton we can create a reduce function which takes a list, a function and an initial value, as its parameters and applies the function to every element in the list and returns the final value. 
 
 
 
