@@ -9,6 +9,7 @@ defmodule MyRecursion do
   end
 
 
+
   # Max function that returns the maximum of a list
 
   def getmax( list ), do: _getmax( list, 0 )
@@ -21,4 +22,13 @@ defmodule MyRecursion do
   defp _getmax( [ head | tail ], value ) when (head < value) do
     _getmax( tail, value )
   end
+
+
+
+  # caesar cypher that gets a string( which is actually a list ) and adds a number n to each element.
+  def caesar( [ ], n ), do: []
+  def caesar( [ head | tail ], n ) do
+    [ head + n | caesar(tail, n) ]
+  end
+
 end
