@@ -49,6 +49,12 @@ defmodule Mylist do
   end
 
 
+  # swap function that swaps adjacent elements in a list.
+  def swap( [] ), do: []
+  def swap( [ a, b | tail ] ) do
+    [ b, a | swap(tail) ]
+  end
+  def swap( _ ), do: raise("cannot swap array with odd number elements")
 
 
 

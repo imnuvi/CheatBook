@@ -34,4 +34,17 @@ defmodule MyRecursion do
     [ rem((head+n - 122), 26) + 97 | caesar(tail, n) ]
   end
 
+
+  # filter function that returns a list with elements that satisfy a function
+  # def filter( [], func, newl ), do: newl
+  # def filter( [ head | tail ], func, newl ) when func.(head) do
+  #   filter( tail, func, newl ++ [head] )
+  # end
+  # def filter( [ head | tail ], func, newl ) when !(func.head) do
+  #   filter( tail, func, newl )
+  # end
+
+
+
+
 end
