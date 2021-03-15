@@ -36,13 +36,13 @@ defmodule MyRecursion do
 
 
   # filter function that returns a list with elements that satisfy a function
-  def filter( [], func, newl ), do: newl
-  def filter( [ head | tail ], func, newl ) when func.(head) do
-    filter( tail, func, newl ++ [head] )
-  end
-  def filter( [ head | tail ], func, newl ) when !(func.head) do
-    filter( tail, func, newl )
-  end
+  # def filter( [], func, newl ), do: newl
+  # def filter( [ head | tail ], func, newl ) when func.(head) do
+  #   filter( tail, func, newl ++ [head] )
+  # end
+  # def filter( [ head | tail ], func, newl ) when !(func.head) do
+  #   filter( tail, func, newl )
+  # end
 
 
 
