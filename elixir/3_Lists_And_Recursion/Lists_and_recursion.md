@@ -83,5 +83,8 @@ in order to generalise this funciton we can create a reduce function which takes
 Lists can match complex patterns other than just a single head and tail element. the | operator supports multiple elements to its left . ( like [ 1, 2, 3 | [ 5, 6, 7 ] ]). same works in pattern matching too.
 
 
+List matching is recursive and lists of lists can be matched
+
+
 
 <!--  -->
