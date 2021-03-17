@@ -51,7 +51,7 @@ Square a list, and add one to a list are in the [recursive_lists.exs](./recursiv
 
 <h3>Creating a map</h3>
 
-If we look at all the recursive functions, we can see that it follows a pattern, where if an empty list is present do nothing. All other logic is written in the second part of the function. where something is done to the head and the tail is called. We are going to generalise the definition and write a map function which takes another function and a list and returns a new list witht the function performed.
+If we look at all the recursive functions, we can see that it follows a pattern, where if an empty list is present do nothing. All other logic is written in the second part of the function. where something is done to the head and the tail is called. We are going to generalise the definition and write a map function which takes another function and a list and returns a new list with the function performed.
 
 Now if we call Mylist.map([1,2,3,4], &(&1*&1))
 Now if we call Mylist.map([1,2,3,4], fn n -> n*n end)  this is just a different method of defining nameless functions.
