@@ -95,11 +95,16 @@ List matching is recursive and lists of lists can be matched
 
 <code>List.flatten([[[1], 2], [[3]]]) -> [1, 2, 3]</code>
 
-- 
+- List.foldl() -> like reduce but can be given a direction foldl or foldr.  takes in three arguments, the iterable, accumulator, and a function.
 
+- List.zip -> matches number of elements and merges Lists
 
+<code>List.zip([1,2,3],[:a,:b,:c],["cat","dog"])</code><br>
+<code>[{1, :a, "cat"}, {2, :b, "dog"}]</code>
 
+- List.unzip(listname) -> unzips the zipped values.
 
+- List.keyfind() -> used to find key value pairs in tuple lists. It takes in four parameters the iterable, the key, its position in the tuple, default statement to be returned.
 
 
 
