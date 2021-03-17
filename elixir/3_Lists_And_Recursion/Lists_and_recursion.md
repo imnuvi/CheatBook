@@ -89,4 +89,18 @@ List matching is recursive and lists of lists can be matched
 
 
 
+<h3>Some list operations</h3>
+
+- List.flatten()  # flattens the list (removes recursion)
+
+<code>List.flatten([[[1], 2], [[3]]]) -> [1, 2, 3]</code>
+
+- 
+
+
+
+
+
+
+
 <!--  -->
