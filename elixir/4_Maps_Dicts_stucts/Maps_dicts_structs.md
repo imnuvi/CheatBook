@@ -16,3 +16,9 @@ there are multiple implementations of dictionaries.
 - elements are ordered - Keyword
 - need to pattern match - map
 - more than a hundred entries - Hashmap
+
+
+
+<h3>The Basics</h3>
+
+maps and hashdicts both implement the Dict behaviour. The Keyword module also uses the implementation but with some modifications to accomodate multiple entries with same keys. Generally we use the Dict modules methods as this allows us to change the implementation between say Dict and HashDict.
