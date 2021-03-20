@@ -51,7 +51,7 @@ Square a list, and add one to a list are in the [recursive_lists.exs](./recursiv
 
 <h3>Creating a map</h3>
 
-If we look at all the recursive functions, we can see that it follows a pattern, where if an empty list is present do nothing. All other logic is written in the second part of the function. where something is done to the head and the tail is called. We are going to generalise the definition and write a map function which takes another function and a list and returns a new list witht the function performed.
+If we look at all the recursive functions, we can see that it follows a pattern, where if an empty list is present do nothing. All other logic is written in the second part of the function. where something is done to the head and the tail is called. We are going to generalise the definition and write a map function which takes another function and a list and returns a new list with the function performed.
 
 Now if we call Mylist.map([1,2,3,4], &(&1*&1))
 Now if we call Mylist.map([1,2,3,4], fn n -> n*n end)  this is just a different method of defining nameless functions.
@@ -71,6 +71,8 @@ If we want to keep track of a variable during a recursive function, we cannot ke
 so we return the value of sum if list is empty or we return the sum plus the current value.
 
 
+IN order to match any number in the second place we can rewrite the function so that it takes a parameter and the parameter also matches the second value.
+
 
 in order to generalise this funciton we can create a reduce function which takes a list, a function and an initial value, as its parameters and applies the function to every element in the list and returns the final value.
 
@@ -81,6 +83,28 @@ in order to generalise this funciton we can create a reduce function which takes
 <h3>Complex list patterns</h3>
 
 Lists can match complex patterns other than just a single head and tail element. the | operator supports multiple elements to its left . ( like [ 1, 2, 3 | [ 5, 6, 7 ] ]). same works in pattern matching too.
+
+
+List matching is recursive and lists of lists can be matched
+
+
+
+<h3>Some list operations</h3>
+
+- List.flatten()  # flattens the list (removes recursion)
+
+<code>List.flatten([[[1], 2], [[3]]]) -> [1, 2, 3]</code>
+
+- List.foldl() -> like reduce but can be given a direction foldl or foldr.  takes in three arguments, the iterable, accumulator, and a function.
+
+- List.zip -> matches number of elements and merges Lists
+
+<code>List.zip([1,2,3],[:a,:b,:c],["cat","dog"])</code><br>
+<code>[{1, :a, "cat"}, {2, :b, "dog"}]</code>
+
+- List.unzip(listname) -> unzips the zipped values.
+
+- List.keyfind() -> used to find key value pairs in tuple lists. It takes in four parameters the iterable, the key, its position in the tuple, default statement to be returned.
 
 
 
