@@ -82,3 +82,11 @@ best way to update a map is with the syntax.
 <code>new_map = %{ old_map | key => value, ... }</code>
 
 this creates a new map which has the values to the right of the pipe updated
+<br>
+the above syntax can only be used to edit existing keys. New keys cannot be added. for adding new keys Dict.put_new/3 needs to be used
+
+
+<h6>Note:</h6>
+remember the %{ a: "one", b: "two" } syntax only works if the keys are atoms. if they're not atoms, use the %{ "a" => "one", "b" => "two" }
+
+<br>
