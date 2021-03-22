@@ -66,3 +66,19 @@ works but
 %{ value => :ok } = %{ 1 => :ok, 2 => :error }
 
 doesnt work
+
+
+
+
+<h3>Updating a map</h3>
+
+
+we updated lists by copying or adding a head of the list and traversing it. With maps we can edit, add or remove keys without traversing the entire map. Maps are also immutable so changing a map gives a new map.
+
+
+best way to update a map is with the syntax.
+<br>
+<br>
+<code>new_map = %{ old_map | key => value, ... }</code>
+
+this creates a new map which has the values to the right of the pipe updated
