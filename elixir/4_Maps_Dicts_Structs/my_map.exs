@@ -19,3 +19,21 @@ defmodule MyMap do
 
 
 end
+
+
+
+defmodule HotelRoom do
+  def book(%{ name: name, height: height })
+  when height > 1.7 do
+    IO.puts "Need an extra long bed for #{name}"
+  end
+
+  def book( %{ name: name, height: height } )
+  when height < 1.3 do
+    IO.puts "Keep the switches low for #{name}"
+  end
+
+  def book(person) do
+    IO.puts("Normal bed for this customer #{person.name}")
+  end
+end

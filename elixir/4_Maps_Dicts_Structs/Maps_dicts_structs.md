@@ -51,3 +51,18 @@ here the a_name is matched with the "Dave" value and so the value of a_name vari
 
 LOOPS:
 assume we have a list of dictionaries that contain person name and their height. If we want to filter out people whose height is greater than a specified number, we can pattern match the elements to their height and inspect only if condition is satisfied.s
+
+
+
+
+<h3>Binding values</h3>
+
+values cannot be bound to values during pattern matching.
+
+so %{ 2 => state } = %{ 1 => :ok, 2 => :error }
+
+works but
+
+%{ value => :ok } = %{ 1 => :ok, 2 => :error }
+
+doesnt work
