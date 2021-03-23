@@ -90,3 +90,6 @@ the above syntax can only be used to edit existing keys. New keys cannot be adde
 remember the %{ a: "one", b: "two" } syntax only works if the keys are atoms. if they're not atoms, use the %{ "a" => "one", "b" => "two" }
 
 <br>
+<h3>Structs</h3>
+
+If we want to have a generalised map, the general dict is sufficient. But elixir doesnt know if some particular keys are not allowed or just one type of keys are allowed( a typed map ). for this the Struct can be used. Structs are maps with fixed set of fields, default values for those fields and can be pattern matched by type as well as value(content).
