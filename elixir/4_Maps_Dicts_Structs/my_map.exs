@@ -28,6 +28,10 @@ defmodule HotelRoom do
 end
 
 
+defmodule Subscriber do
+  defstruct [name: "", paid: false, over_18: true]
+end
+
 
 people = [
   %{ name: "Grumpy", height: 1.94 },
@@ -50,4 +54,4 @@ new_numbers = %{ my_numbers | b: "two", c: :three }
 # numbers2 = %{ new_numbers | x: "five" } This produces error because this syntax can only change keys not add them
 
 IO.puts(inspect new_numbers)
-IO.puts(inspect numbers2)
+# IO.puts(inspect numbers2)

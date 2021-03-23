@@ -93,3 +93,23 @@ remember the %{ a: "one", b: "two" } syntax only works if the keys are atoms. if
 <h3>Structs</h3>
 
 If we want to have a generalised map, the general dict is sufficient. But elixir doesnt know if some particular keys are not allowed or just one type of keys are allowed( a typed map ). for this the Struct can be used. Structs are maps with fixed set of fields, default values for those fields and can be pattern matched by type as well as value(content).
+
+
+a struct is basically a module that wraps a limited form of map. Its limited because the keys need to be atoms and dont have dict or access capabilities
+
+the name of the module becomes the type of the map type. Inside the module use defstruct to define the maps characteristics.
+
+
+<code>
+defmodule Subscriber do
+  defstruct name: "", paid: false, over_18: true
+end
+</code>
+
+<br>
+<br>
+here the type of the struct is Subscriber. the default values are given in defstruct. so calling s1 = %Subscriber{} will create a subscriber map with default values.
+values can be accessed with the dot notation. <code>s1.paid</code> will yield false.
+
+
+you cannot define a map with fields other than those in defstruct.
