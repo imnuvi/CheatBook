@@ -118,3 +118,17 @@ updates happen the same way for normal dict. so s2 = %Subscriber{ s1 | paid: tru
 
 
 sructs are wrapped in a module in order to implement struct specific functions and behaviour.
+
+
+
+
+
+<h5>different ways to access stucts.</h5>
+
+unlike maps we cannot access structs with the square bracket notation. only the dot notation can be used. this is because maps use the Access protocol while structs do not. Hovewer this can be added with the Access directive like so,
+<code>
+defmodule Attendee do
+  @derive Access
+  defstruct name: "", over_18: false
+end
+</code>
