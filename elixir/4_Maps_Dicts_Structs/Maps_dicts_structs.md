@@ -132,3 +132,12 @@ defmodule Attendee do
   defstruct name: "", over_18: false
 end
 </code>
+
+
+now this can be accessed as A1[:over_18]
+
+
+
+<h3>Nested Dictionaries</h3>
+
+Dictionaries allow us to associate various keys with values. But these values themselves can also be dictionaries. Say a person can be a dictionary with multiple attributes, and can have a pet which can also be a dictionary effectively nesting dictionaries.
