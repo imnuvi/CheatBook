@@ -113,3 +113,8 @@ values can be accessed with the dot notation. <code>s1.paid</code> will yield fa
 
 
 you cannot define a map with fields other than those in defstruct.
+
+updates happen the same way for normal dict. so s2 = %Subscriber{ s1 | paid: true} is how we update a Struct.
+
+
+sructs are wrapped in a module in order to implement struct specific functions and behaviour.

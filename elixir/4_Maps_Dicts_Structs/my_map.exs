@@ -1,14 +1,9 @@
 
 defmodule MyMap do
-
-
   def values(dict) do
     dict |> Dict.values |> Enum.sum
   end
-
-
 end
-
 
 
 defmodule HotelRoom do
@@ -31,6 +26,28 @@ end
 defmodule Subscriber do
   defstruct [name: "", paid: false, over_18: true]
 end
+
+
+defmodule Attendee do
+  defstruct [name: "", paid: false, over_18: true, present: false]
+
+  def may_attend_after_party(attendee = %Attendee{}) do
+    attendee.paid && attendee.over_18
+  end
+
+  def is_present(attendee = %Attendee{}) do
+    %Attendee{ attendee | present: true }
+  end
+
+  def print_vip_badge(%Attendee{name: name}) when name != "" do
+    IO.puts("Print very cheap badge for #{name}")
+  end
+
+  def print_vip_badge(%Attendee{}) do
+    IO.puts("You dont have a name?")
+  end
+end
+
 
 
 people = [
