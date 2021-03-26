@@ -45,4 +45,76 @@ iex> a_name
 </code>
 
 
-here the a_name is matched with the "Dave" value and so the value of a_name variable is Dave
+here the a_name is matched with the "Dave" value and so the value of a_name variable is Davee
+
+
+
+LOOPS:
+assume we have a list of dictionaries that contain person name and their height. If we want to filter out people whose height is greater than a specified number, we can pattern match the elements to their height and inspect only if condition is satisfied.s
+
+
+
+
+<h3>Binding values</h3>
+
+values cannot be bound to values during pattern matching.
+
+so %{ 2 => state } = %{ 1 => :ok, 2 => :error }
+
+works but
+
+%{ value => :ok } = %{ 1 => :ok, 2 => :error }
+
+doesnt work
+
+
+
+
+<h3>Updating a map</h3>
+
+
+we updated lists by copying or adding a head of the list and traversing it. With maps we can edit, add or remove keys without traversing the entire map. Maps are also immutable so changing a map gives a new map.
+
+
+best way to update a map is with the syntax.
+<br>
+<br>
+<code>new_map = %{ old_map | key => value, ... }</code>
+
+this creates a new map which has the values to the right of the pipe updated
+<br>
+the above syntax can only be used to edit existing keys. New keys cannot be added. for adding new keys Dict.put_new/3 needs to be used
+
+
+<h6>Note:</h6>
+remember the %{ a: "one", b: "two" } syntax only works if the keys are atoms. if they're not atoms, use the %{ "a" => "one", "b" => "two" }
+
+<br>
+<h3>Structs</h3>
+
+If we want to have a generalised map, the general dict is sufficient. But elixir doesnt know if some particular keys are not allowed or just one type of keys are allowed( a typed map ). for this the Struct can be used. Structs are maps with fixed set of fields, default values for those fields and can be pattern matched by type as well as value(content).
+
+
+a struct is basically a module that wraps a limited form of map. Its limited because the keys need to be atoms and dont have dict or access capabilities
+
+the name of the module becomes the type of the map type. Inside the module use defstruct to define the maps characteristics.
+
+
+<code>
+defmodule Subscriber do
+  defstruct name: "", paid: false, over_18: true
+end
+</code>
+
+<br>
+<br>
+here the type of the struct is Subscriber. the default values are given in defstruct. so calling s1 = %Subscriber{} will create a subscriber map with default values.
+values can be accessed with the dot notation. <code>s1.paid</code> will yield false.
+
+
+you cannot define a map with fields other than those in defstruct.
+
+updates happen the same way for normal dict. so s2 = %Subscriber{ s1 | paid: true} is how we update a Struct.
+
+
+sructs are wrapped in a module in order to implement struct specific functions and behaviour.
