@@ -72,3 +72,21 @@ new_numbers = %{ my_numbers | b: "two", c: :three }
 
 IO.puts(inspect new_numbers)
 # IO.puts(inspect numbers2)
+
+
+defmodule Pet do
+  defstruct [name: "", color: ""]
+end
+
+defmodule  Person do
+  defstruct [name: "", age: 0, pet: %{}]
+end
+
+defmodule Main do
+  def main do
+    worker = %Person{name: "sammy", age: 44, pet: %Pet{name: "fluffy", color: "pink"}}
+    IO.puts(inspect worker)
+  end
+end
+
+Main.main()

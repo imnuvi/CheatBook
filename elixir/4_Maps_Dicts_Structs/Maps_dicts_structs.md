@@ -141,3 +141,9 @@ now this can be accessed as A1[:over_18]
 <h3>Nested Dictionaries</h3>
 
 Dictionaries allow us to associate various keys with values. But these values themselves can also be dictionaries. Say a person can be a dictionary with multiple attributes, and can have a pet which can also be a dictionary effectively nesting dictionaries.
+
+
+This will have code in my_map.exs file, with a nested person along with the pet struct.
+
+
+<b>Note</b> when using the key => value syntax for assigning the struct or a map, you need to specify if the key is an atom  or not with : like <code>:my_key => 55</code>
