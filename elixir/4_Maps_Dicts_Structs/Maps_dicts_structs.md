@@ -147,3 +147,12 @@ This will have code in my_map.exs file, with a nested person along with the pet 
 
 
 <b>Note</b> when using the key => value syntax for assigning the struct or a map, you need to specify if the key is an atom  or not with : like <code>:my_key => 55</code>
+
+<b>put_in</b> this method can be used to update a value within a nested struct. like <code>report = %{ owner: %{ name: "Dave", company: "Pragmatic" }, severity: 1}</code><br>
+<code>put_in(report.owner.company, "fast car company")</code>
+<br>
+<br>
+<b>update_in</b> this method is similar to put_in but can be given a function as second argument instead of a value and the function will be performed on the key-value. like <code>report = %{ owner: %{ name: "Dave", company: "Pragmatic" }, severity: 1}</code><br>
+<code>put_in(report.owner.name, &("mr. " <> &1))</code>
+
+The nested functions put_in and update_in make use of the Access protocol. So if we have a dict or a map inside a struct it can be accessed within the struct nested with square bracket access notation.
