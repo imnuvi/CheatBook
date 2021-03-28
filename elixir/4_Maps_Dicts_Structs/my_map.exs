@@ -83,6 +83,8 @@ defmodule  Person do
   defstruct [name: "", age: 0, pet: %{}]
 end
 
+
+
 defmodule Main do
   def main do
     worker = %Person{name: "sammy", age: 44, pet: %Pet{name: "fluffy", color: "pink"}}
@@ -93,6 +95,26 @@ defmodule Main do
     # update in function lets us use a function to do some action to the element.
     new_worker2 = update_in(worker.pet.color, &("dark" <> &1))
     IO.puts(inspect new_worker2)
+
+
+    nested_movie = %{ transformers: %{ actor: %{ name: "optimus Prime", color: "blue" } }, pirates: %{ actor: %{ name: "Johnny", color: "brown" } }  }
+    IO.inspect(get_in(nested_movie, [:pirates, :actor ]))
+    IO.inspect(get_in(nested_movie, [:pirates, :actor, :color]))
+    IO.inspect(put_in(nested_movie, [:pirates, :actor, :color], "drunk brown"))
+
+    languages_with_an_r = fn(:get, collection, next_fn) ->
+      for row <- collection do
+        if String.contains?(row.language, "r") do
+          next_fn.(row)
+        end
+      end
+    end
+
+    authors = [
+    %{ name: "José", language: "Elixir" }, %{ name: "Matz", language: "Ruby" }, %{ name: "Larry", language: "Perl" }
+    ]
+
+    IO.inspect(get_in(authors, [languages_with_an_r, :name]))
   end
 end
 

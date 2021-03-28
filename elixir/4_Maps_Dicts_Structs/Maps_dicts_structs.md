@@ -156,3 +156,25 @@ This will have code in my_map.exs file, with a nested person along with the pet 
 <code>put_in(report.owner.name, &("mr. " <> &1))</code>
 
 The nested functions put_in and update_in make use of the Access protocol. So if we have a dict or a map inside a struct it can be accessed within the struct nested with square bracket access notation.
+
+<code>put_in(report[:owner][:company], "PragProg")</code>
+
+<h3>Dynamic(Runtime) nested accessors</h3>
+
+The nested accessors so far are macros(check https://elixir-lang.org/getting-started/meta/macros.html) and hence have some limitation on the number of parameters that can be sent and these keys cannot be sent to other functions. so when a list containing some keys are sent to these functions, they call them as functions instead of macros. these allow us to dynamically manipulate the keys at runtime.
+
+
+![function image](../images/map_functions.png)
+
+
+Cool stuff that happens in dynamic accessors in get_in and get_and_update_in is when we give a function as a parameter in the key list, all keys for which the values match in the function are returned.
+
+
+
+
+
+
+
+
+
+<!--  -->
