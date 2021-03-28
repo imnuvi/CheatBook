@@ -169,7 +169,17 @@ The nested accessors so far are macros(check https://elixir-lang.org/getting-sta
 
 Cool stuff that happens in dynamic accessors in get_in and get_and_update_in is when we give a function as a parameter in the key list, all keys for which the values match in the function are returned.
 
+<h3>Sets</h3>
 
+sets(HashSets) can be used to store data and then access them in constant time.
+
+<code>s1 = Enum.into 1..5 HashSet.new</code>
+
+functions supported with sets are
+- Set.member?(setname, value)
+- Set.union(set1,set2)
+- Set.difference(set1,set2)
+- Set.intersection(set1,set2)
 
 
 
