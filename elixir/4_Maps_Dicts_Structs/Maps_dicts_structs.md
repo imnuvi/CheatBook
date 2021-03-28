@@ -179,7 +179,10 @@ functions supported with sets are
 - Set.member?(setname, value)
 - Set.union(set1,set2)
 - Set.difference(set1,set2)
-- Set.intersection(set1,set2)
+- Set.intersection(set1,set2)<br>
+<br>
+<br>
+Although dictionaries and structs and hashdicts can resemble object oriented structure ( and they are basically ), but resist the urge to implement oops ideas here.
 
 
 
