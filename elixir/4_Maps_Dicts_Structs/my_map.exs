@@ -1,9 +1,10 @@
 
-defmodule MyMap do
-  def values(dict) do
-    dict |> Dict.values |> Enum.sum
-  end
-end
+# dict.values/1 is deprecated
+# defmodule MyMap do
+#   def values(dict) do
+#     dict |> Dict.values |> Enum.sum
+#   end
+# end
 
 
 defmodule HotelRoom do
@@ -86,6 +87,12 @@ defmodule Main do
   def main do
     worker = %Person{name: "sammy", age: 44, pet: %Pet{name: "fluffy", color: "pink"}}
     IO.puts(inspect worker)
+    # the put in function can update nested structs
+    new_worker = put_in(worker.pet.name, "fluffy furball")
+    IO.puts(inspect new_worker)
+    # update in function lets us use a function to do some action to the element.
+    new_worker2 = update_in(worker.pet.color, &("dark" <> &1))
+    IO.puts(inspect new_worker2)
   end
 end
 
