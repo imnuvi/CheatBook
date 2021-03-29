@@ -44,6 +44,16 @@ defmodule MyRecursion do
   #   filter( tail, func, newl )
   # end
 
+  #  Ok SO MIND BLOWN RIGHT HERE. THIS FUNCTION GETS A LIST AND REVERSES IT BY REDUCING IT. HOW IT DOES IS IT TAKES AN EMPTY LIST AS ACCUMULATOR AND THEN WHEN EACH NEW ELEMENT IS REDUCED WITHT THE FUNCTION IT ADDS IT TO THE TAIL OF THE LIST AND HENCE ALL ELEMENTS ARE REVERSED. THATS AWESOME
+
+
+  def reverse(lst) do
+    lst
+      |> Enum.map(&String.trim/1)
+      |> Enum.reduce([], &([&1 | &2]))
+      |> Enum.each(&IO.puts/1)
+  end
+
 
 
 
