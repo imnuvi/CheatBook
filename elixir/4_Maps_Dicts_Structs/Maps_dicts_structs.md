@@ -118,3 +118,76 @@ updates happen the same way for normal dict. so s2 = %Subscriber{ s1 | paid: tru
 
 
 sructs are wrapped in a module in order to implement struct specific functions and behaviour.
+
+
+
+
+
+<h5>different ways to access stucts.</h5>
+
+unlike maps we cannot access structs with the square bracket notation. only the dot notation can be used. this is because maps use the Access protocol while structs do not. Hovewer this can be added with the Access directive like so,
+<code>
+defmodule Attendee do
+  @derive Access
+  defstruct name: "", over_18: false
+end
+</code>
+
+
+now this can be accessed as A1[:over_18]
+
+
+
+<h3>Nested Dictionaries</h3>
+
+Dictionaries allow us to associate various keys with values. But these values themselves can also be dictionaries. Say a person can be a dictionary with multiple attributes, and can have a pet which can also be a dictionary effectively nesting dictionaries.
+
+
+This will have code in my_map.exs file, with a nested person along with the pet struct.
+
+
+<b>Note</b> when using the key => value syntax for assigning the struct or a map, you need to specify if the key is an atom  or not with : like <code>:my_key => 55</code>
+
+<b>put_in</b> this method can be used to update a value within a nested struct. like <code>report = %{ owner: %{ name: "Dave", company: "Pragmatic" }, severity: 1}</code><br>
+<code>put_in(report.owner.company, "fast car company")</code>
+<br>
+<br>
+<b>update_in</b> this method is similar to put_in but can be given a function as second argument instead of a value and the function will be performed on the key-value. like <code>report = %{ owner: %{ name: "Dave", company: "Pragmatic" }, severity: 1}</code><br>
+<code>put_in(report.owner.name, &("mr. " <> &1))</code>
+
+The nested functions put_in and update_in make use of the Access protocol. So if we have a dict or a map inside a struct it can be accessed within the struct nested with square bracket access notation.
+
+<code>put_in(report[:owner][:company], "PragProg")</code>
+
+<h3>Dynamic(Runtime) nested accessors</h3>
+
+The nested accessors so far are macros(check https://elixir-lang.org/getting-started/meta/macros.html) and hence have some limitation on the number of parameters that can be sent and these keys cannot be sent to other functions. so when a list containing some keys are sent to these functions, they call them as functions instead of macros. these allow us to dynamically manipulate the keys at runtime.
+
+
+![function image](../images/map_functions.png)
+
+
+Cool stuff that happens in dynamic accessors in get_in and get_and_update_in is when we give a function as a parameter in the key list, all keys for which the values match in the function are returned.
+
+<h3>Sets</h3>
+
+sets(HashSets) can be used to store data and then access them in constant time.
+
+<code>s1 = Enum.into 1..5 HashSet.new</code>
+
+functions supported with sets are
+- Set.member?(setname, value)
+- Set.union(set1,set2)
+- Set.difference(set1,set2)
+- Set.intersection(set1,set2)<br>
+<br>
+<br>
+Although dictionaries and structs and hashdicts can resemble object oriented structure ( and they are basically ), but resist the urge to implement oops ideas here.
+
+
+
+
+
+
+
+<!--  -->
