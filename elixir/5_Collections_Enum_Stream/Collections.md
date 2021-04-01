@@ -18,8 +18,18 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.map([1,2,3], &(&1 * &1))</code> map all elements after performing a function on each</li>
 
-  <li><code>Enum.at([1,2,3,4], 2)</code> </li>
+  <li><code>Enum.at([1,2,3,4], 2)</code> gives the element at the index described</li>
 
   <li><code>Enum.filter([1,2,3,4], &(&1 < 15))</code> filters all elements based on the given function. If the function returns true, it is retained, if it returns false it discards the element.</li>
+
+  <li><code>Enum.at([1,2,3,4], &(&1 > 3))</code> filters every element except those that match the function given.</li>
+
+  <li><code>Enum.sort([3,5,6,1,2,9], &(String.length(&1) <= String.length(&2)))</code> sorts the enumerable based on the function given. if function is true, it sorts else it keeps as is</li>
+
+  <li><code>Enum.max( [1,2,3,4] )</code> gives the maximum element of the list</li>
+
+  <li><code>Enum.max_by( ["hi","hello", "wow", "okay"], &(String.length/1) )</code> gives the max element based on the function given for the particular type</li>
+
+  <li><code>Enum.take( [1,2,3,4], 3 )</code> gives a new collection with just the first n elements given in the second parameter</li>
 
 </ul>
