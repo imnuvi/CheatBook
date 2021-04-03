@@ -32,4 +32,12 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.take( [1,2,3,4], 3 )</code> gives a new collection with just the first n elements given in the second parameter</li>
 
+  <li><code>Enum.take_every( [1,2,3,4], 2 )</code> selects every nth element( second here ) from the collection</li>
+
+  <li><code>Enum.take_while( [1,2,3,4], &(&1<4) )</code> selects every element that matches and returns true in the function given as second argument.</li>
+
+  <li><code>Enum.split( [1,2,3,4], 3 )</code> splits the collection into two at the index mentioned</li>
+
+  <li><code>Enum.split_while( [1,2,3,4], 3 )</code> splits the collection into two until the condition is satisfied</li>
+
 </ul>
