@@ -40,4 +40,8 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.split_while( [1,2,3,4], 3 )</code> splits the collection into two until the condition is satisfied</li>
 
+  <li><code>Enum.join( [1,2,3,4] )</code> joins the collection into a string </li>
+
+  <li><code>Enum.join( [1,2,3,4], " , " )</code> joins the collection with the second argument</li>
+
 </ul>
