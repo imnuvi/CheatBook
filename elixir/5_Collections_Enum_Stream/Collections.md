@@ -44,4 +44,10 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.join( [1,2,3,4], " , " )</code> joins the collection with the second argument</li>
 
+  <li><code>Enum.all?( [1,2,3,4], &(&1 < 4) )</code> checks if all elements in the collection match the function</li>
+
+  <li><code>Enum.any?( [1,2,3,4], &(&1 < 4) )</code> checks if any of the  elements in the collection match the function</li>
+
+  <li><code>Enum.member?( [1,2,3,4], 2 )</code> checks if second argument is part of the collection</li>
+
 </ul>
