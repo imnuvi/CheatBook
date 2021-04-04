@@ -50,4 +50,8 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.member?( [1,2,3,4], 2 )</code> checks if second argument is part of the collection</li>
 
+  <li><code>Enum.zip( [1,2,3], [:a, :b, :c] )</code> gives a new list where the elements are paired with those in the second argument</li>
+
+  <li><code>Enum.with_index( [1,2,3] )</code> creates a list of sets with the second element as their index</li>
+
 </ul>
