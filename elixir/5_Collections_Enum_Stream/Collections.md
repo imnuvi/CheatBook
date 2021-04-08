@@ -54,4 +54,19 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.with_index( [1,2,3] )</code> creates a list of sets with the second element as their index</li>
 
+  <li><code>Enum.reduce( [1,2,3,4], &(&1 + &2) )</code> reduces the enumerable into a single value based on the function</li>
+
 </ul>
+
+<i>the <- is syntax for generator and is used mostly with for. it means a range</i>
+
+<b>deal a hand of cards</b><br>
+<code>import enum</code><br>
+<code>deck = for rank <- '23456789TJQKA', suit <- 'CDHS', do: [suit,rank]</code><br>
+<code>deck |> shuffle |> take(20)</code>  select 20 random cards from the deck<br>
+<code>hands = deck |> shuffle |> chunk(13)</code> split the deck into random 13 chunks.
+
+
+<b>Sorting</b>
+
+when sorting with a custom function always use <= and not just < for the sort to be stable
