@@ -12,4 +12,9 @@ defmodule MyCollections do
     end
   end
 
+  def each([], func) do []
+  def each([head, tail], func) do
+    [func.(head) | each(tail)]
+  end
+
 end
