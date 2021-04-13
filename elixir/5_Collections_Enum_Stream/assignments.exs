@@ -20,10 +20,15 @@ defmodule MyCollections do
   def filter([], func), do: []
   def filter([head | tail], func) do
     if func.(head) do
-      [head | filter(tail, func)]
+      [head | filter(tail,func)]
     else
       filter(tail, func)
     end
+  end
+
+  def split(lst, val), do: (lst, [], 0)
+  def split([head | tail], first, val) when (cnt <= val) do
+    
   end
 
 end
