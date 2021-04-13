@@ -26,9 +26,10 @@ defmodule MyCollections do
     end
   end
 
-  def split(lst, val), do: (lst, [], 0)
-  def split([head | tail], first, val) when (cnt <= val) do
-    
+  def split(lst, val), do: split(lst, [], val)
+  def split(lst, first, 0), do: {first, lst}
+  def split([head | tail], first, val) do
+    split(tail, first ++ [head], val-1)
   end
 
 end
