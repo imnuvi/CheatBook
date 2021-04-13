@@ -3,7 +3,7 @@ defmodule MyCollections do
   def all?(list) do
     all?(list, fn x -> !!x end)
   end
-  def all?([], func) do: true
+  def all?([], func), do: true
   def all?([head | tail], func) do
     if func.(head) do
       all?(tail, func)
@@ -12,9 +12,18 @@ defmodule MyCollections do
     end
   end
 
-  def each([], func) do []
+  def each([], func), do: []
   def each([head, tail], func) do
-    [func.(head) | each(tail)]
+    [func.(head) | each(tail, func)]
+  end
+
+  def filter([], func), do: []
+  def filter([head | tail], func) do
+    if func.(head) do
+      [head | filter(tail, func)]
+    else
+      filter(tail, func)
+    end
   end
 
 end
