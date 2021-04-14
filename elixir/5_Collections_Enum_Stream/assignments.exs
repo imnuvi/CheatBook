@@ -40,13 +40,18 @@ defmodule MyCollections do
 
 
 
-  def flatten(lst), do: flatten(lst, [])
-  def flatten([], newl), do: newl
-  def flatten(val, newl), do: val
-  def flatten([val], newl), do: flatten(val, newl)
-  def flatten([head | tail], newl) do
-    newl ++ [flatten(head, newl)] ++ [flatten(tail, newl)]
-  end
+  def flatten(lst) doflatten(lst, [])
 
+  def flatten([head | tail], newl) do
+   IO.puts("HI")
+   flatten(tail, flatten(head, newl))
+  end
+  
+  def flatten([], newl), do: newl
+  def flatten([val], newl), do: flatten(val, newl)
+  def flatten(val, newl), do: newl ++ [val]
+
+  # [[[1]],2,[[[1,2,3],10]],4,5]
+  # [1,2,3,[4]]
 
 end
