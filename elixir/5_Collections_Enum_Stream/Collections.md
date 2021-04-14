@@ -70,3 +70,15 @@ there are a lot of functions in Enum module, and a few are listed below
 <b>Sorting</b>
 
 when sorting with a custom function always use <= and not just < for the sort to be stable
+
+
+
+<h2>Enter Streams</h2>
+
+Streams are a way of lazily calculating and enumerating collections, that we dont have a predefined size for. Lets say we want to find the largest word in  an extremely large file, we would take all the words store them in an enumerable and then find the largest with the function. This takes a lot of memory and is suboptimal. We only need to calculate the value when required. So creating a stream and then processing the value would make much more sense.
+
+<b>syntax</b>
+Streams can be given as input to other streams.
+IO.stream(:line) converts the io device into a stream which can then be processed.
+
+One use case for using streams is when we are getting data from a server with enum we need to wait till all data is recieved. But with streams we can process the data as it arrives.( kinda like promises But weirder?)
