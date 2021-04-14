@@ -32,4 +32,10 @@ defmodule MyCollections do
     split(tail, first ++ [head], val-1)
   end
 
+  def take(lst, val), do: take(lst, [], val)
+  def take(lst, front, 0), do: front
+  def take([head | tail], front, val) do
+    take(tail, front ++ [head], val-1)
+  end
+
 end
