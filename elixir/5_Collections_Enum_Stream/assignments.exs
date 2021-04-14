@@ -38,4 +38,15 @@ defmodule MyCollections do
     take(tail, front ++ [head], val-1)
   end
 
+
+
+  def flatten(lst), do: flatten(lst, [])
+  def flatten([], newl), do: newl
+  def flatten(val, newl), do: val
+  def flatten([val], newl), do: flatten(val, newl)
+  def flatten([head | tail], newl) do
+    newl ++ [flatten(head, newl)] ++ [flatten(tail, newl)]
+  end
+
+
 end
