@@ -101,3 +101,44 @@ There are some wrapper functions to perform these.
 - Stream.iterate
 - Stream.unfold
 - Stream.resource
+
+
+<h4>Stream.cycle</h4>
+This takes an enumerable and returns an infinite Stream containing elements of the enumerable. If it runs out of elements it cycles through the elements over and over again
+
+<code>Enum.take((Stream.cycle([1,2])),10)</code> creates a stream of 10 alternating ones and twos. we can also get to infinity.
+
+<br>
+Streams are represented as functions when you inspect them.
+
+<br>
+<br>
+
+<h4>Stream.repeatedly</h4>
+This is a second order function and takes another function, and invokes the function every time a new value is needed.
+This function can be any function.
+
+
+<code>Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)</code> takes a random value everytime and creates a stream of it.
+
+<br>
+<br>
+
+<h4>Stream.iterate</h4>
+This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it.
+
+<code>Stream.iterate(2,&(&1*&1))</code> creates a stream where each number is 2 power n.
+
+<br>
+<br>
+
+<h4>Stream.unfold</h4>
+this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated.
+
+The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial.
+
+<code>Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)</code><br>
+<br>
+<br>
+
+So what is happening here?  we have the initial fibonacci values 0 and 1. The value returned is 0. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers.
