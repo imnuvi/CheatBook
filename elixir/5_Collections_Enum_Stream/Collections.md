@@ -78,7 +78,18 @@ when sorting with a custom function always use <= and not just < for the sort to
 Streams are a way of lazily calculating and enumerating collections, that we dont have a predefined size for. Lets say we want to find the largest word in  an extremely large file, we would take all the words store them in an enumerable and then find the largest with the function. This takes a lot of memory and is suboptimal. We only need to calculate the value when required. So creating a stream and then processing the value would make much more sense.
 
 <b>syntax</b>
-Streams can be given as input to other streams.
+Streams can be given as input to other stream functions.
 IO.stream(:line) converts the io device into a stream which can then be processed.
 
 One use case for using streams is when we are getting data from a server with enum we need to wait till all data is recieved. But with streams we can process the data as it arrives.( kinda like promises But weirder?)
+
+
+
+<h4>Infinite streams</h4>
+The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With enum the same can be done faster because only the first five elements are selected and so the other values are not even calculated
+
+<code>Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)</code> This takes 8 seconds
+<code>Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)</code> This takes just a few milliseconds.
+
+
+Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams.
