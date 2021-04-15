@@ -93,3 +93,11 @@ The streams can also be infinite. lets say we create a stream of ten million num
 
 
 Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams.
+
+There are some wrapper functions to perform these.
+
+- Stream.cycle
+- Stream.repeatedly
+- Stream.iterate
+- Stream.unfold
+- Stream.resource
