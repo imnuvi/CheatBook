@@ -54,4 +54,101 @@ there are a lot of functions in Enum module, and a few are listed below
 
   <li><code>Enum.with_index( [1,2,3] )</code> creates a list of sets with the second element as their index</li>
 
+  <li><code>Enum.reduce( [1,2,3,4], &(&1 + &2) )</code> reduces the enumerable into a single value based on the function</li>
+
 </ul>
+
+<i>the <- is syntax for generator and is used mostly with for. it means a range</i>
+
+<b>deal a hand of cards</b><br>
+<code>import enum</code><br>
+<code>deck = for rank <- '23456789TJQKA', suit <- 'CDHS', do: [suit,rank]</code><br>
+<code>deck |> shuffle |> take(20)</code>  select 20 random cards from the deck<br>
+<code>hands = deck |> shuffle |> chunk(13)</code> split the deck into random 13 chunks.
+
+
+<b>Sorting</b>
+
+when sorting with a custom function always use <= and not just < for the sort to be stable
+
+
+
+<h2>Enter Streams</h2>
+
+Streams are a way of lazily calculating and enumerating collections, that we dont have a predefined size for. Lets say we want to find the largest word in  an extremely large file, we would take all the words store them in an enumerable and then find the largest with the function. This takes a lot of memory and is suboptimal. We only need to calculate the value when required. So creating a stream and then processing the value would make much more sense.
+
+<b>syntax</b>
+Streams can be given as input to other stream functions.
+IO.stream(:line) converts the io device into a stream which can then be processed.
+
+One use case for using streams is when we are getting data from a server with enum we need to wait till all data is recieved. But with streams we can process the data as it arrives.( kinda like promises But weirder?)
+
+
+
+<h4>Infinite streams</h4>
+The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With enum the same can be done faster because only the first five elements are selected and so the other values are not even calculated
+
+<code>Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)</code> This takes 8 seconds
+<code>Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)</code> This takes just a few milliseconds.
+
+
+Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams.
+
+There are some wrapper functions to perform these.
+
+- Stream.cycle
+- Stream.repeatedly
+- Stream.iterate
+- Stream.unfold
+- Stream.resource
+
+
+<h4>Stream.cycle</h4>
+This takes an enumerable and returns an infinite Stream containing elements of the enumerable. If it runs out of elements it cycles through the elements over and over again
+
+<code>Enum.take((Stream.cycle([1,2])),10)</code> creates a stream of 10 alternating ones and twos. we can also get to infinity.
+
+<br>
+Streams are represented as functions when you inspect them.
+
+<br>
+<br>
+
+<h4>Stream.repeatedly</h4>
+This is a second order function and takes another function, and invokes the function every time a new value is needed.
+This function can be any function.
+
+
+<code>Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)</code> takes a random value everytime and creates a stream of it.
+
+<br>
+<br>
+
+<h4>Stream.iterate</h4>
+This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it.
+
+<code>Stream.iterate(2,&(&1*&1))</code> creates a stream where each number is 2 power n.
+
+<br>
+<br>
+
+<h4>Stream.unfold</h4>
+this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated.
+
+The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial.
+
+<code>Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)</code><br>
+<br>
+<br>
+
+So what is happening here?  we have the initial fibonacci values 0 and 1. The value returned is 0. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers.
+
+
+<h4>Stream.resource</h4>
+
+The resource function allows us to write custom streams from devices or collections. Say we need to implement a stream from database queries or write our own lazy file reading function, we can do it with stream.resource . It is  a modification of the unfold function. It takes three parameters and all are functions.
+
+- the first argument is a function that returns a resource( like file or database )
+- the second argument is similar to second argument in unfold, where it takes a resource, returns a value and passes a new value for the next iteration.
+If the tuple returned has a value as the first value it continues, or if the first value is :halt, it stops the execution and performs the third parameter, which is
+- the third argument is a function that is performed when all execution is done,( like file close ) basically deallocating the resource used.
