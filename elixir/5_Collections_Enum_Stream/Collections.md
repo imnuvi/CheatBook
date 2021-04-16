@@ -142,3 +142,13 @@ The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end)
 <br>
 
 So what is happening here?  we have the initial fibonacci values 0 and 1. The value returned is 0. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers.
+
+
+<h4>Stream.resource</h4>
+
+The resource function allows us to write custom streams from devices or collections. Say we need to implement a stream from database queries or write our own lazy file reading function, we can do it with stream.resource . It is  a modification of the unfold function. It takes three parameters and all are functions.
+
+- the first argument is a function that returns a resource( like file or database )
+- the second argument is similar to second argument in unfold, where it takes a resource, returns a value and passes a new value for the next iteration.
+If the tuple returned has a value as the first value it continues, or if the first value is :halt, it stops the execution and performs the third parameter, which is
+- the third argument is a function that is performed when all execution is done,( like file close ) basically deallocating the resource used.
