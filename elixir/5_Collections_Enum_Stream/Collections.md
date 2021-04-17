@@ -4,13 +4,9 @@ All these collections share a trait in that they are iterable. Elixir provides u
 
 The Enum module will be mostly used. The Stream module is almost the same but iterates through stuff lazily( only calculating when needed ).
 
-
-
 # Enum for processing collections
 
- there are a lot of functions in Enum module, and a few are listed below
-
-
+there are a lot of functions in Enum module, and a few are listed below
 
 <br>
 <br>
@@ -60,25 +56,25 @@ One use case for using streams is when we are getting data from a server with en
 
 ### Infinite streams
 
- The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With enum the same can be done faster because only the first five elements are selected and so the other values are not even calculated `Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes 8 seconds `Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes just a few milliseconds. Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams. There are some wrapper functions to perform these. - Stream.cycle - Stream.repeatedly - Stream.iterate - Stream.unfold - Stream.resource 
+The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With enum the same can be done faster because only the first five elements are selected and so the other values are not even calculated `Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes 8 seconds `Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes just a few milliseconds. Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams. There are some wrapper functions to perform these. - Stream.cycle - Stream.repeatedly - Stream.iterate - Stream.unfold - Stream.resource
 
 ### Stream.cycle
 
- This takes an enumerable and returns an infinite Stream containing elements of the enumerable. If it runs out of elements it cycles through the elements over and over again `Enum.take((Stream.cycle([1,2])),10)` creates a stream of 10 alternating ones and twos. we can also get to infinity.<br>
+This takes an enumerable and returns an infinite Stream containing elements of the enumerable. If it runs out of elements it cycles through the elements over and over again `Enum.take((Stream.cycle([1,2])),10)` creates a stream of 10 alternating ones and twos. we can also get to infinity.<br>
 Streams are represented as functions when you inspect them.<br><br>
 
 ### Stream.repeatedly
 
- This is a second order function and takes another function, and invokes the function every time a new value is needed. This function can be any function. `Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)` takes a random value everytime and creates a stream of it.<br><br>
+This is a second order function and takes another function, and invokes the function every time a new value is needed. This function can be any function. `Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)` takes a random value everytime and creates a stream of it.<br><br>
 
 ### Stream.iterate
 
- This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it. `Stream.iterate(2,&(&1*&1))` creates a stream where each number is 2 power n.<br><br>
+This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it. `Stream.iterate(2,&(&1*&1))` creates a stream where each number is 2 power n.<br><br>
 
 ### Stream.unfold
 
- this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated. The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial. `Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)`<br><br><br>
-So what is happening here? we have the initial fibonacci values 0 and 1\. The value returned is 0\. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers. 
+this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated. The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial. `Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)`<br><br><br>
+So what is happening here? we have the initial fibonacci values 0 and 1\. The value returned is 0\. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers.
 
 ### Stream.resource
 
@@ -87,3 +83,7 @@ The resource function allows us to write custom streams from devices or collecti
 - the first argument is a function that returns a resource( like file or database )
 - the second argument is similar to second argument in unfold, where it takes a resource, returns a value and passes a new value for the next iteration. If the tuple returned has a value as the first value it continues, or if the first value is :halt, it stops the execution and performs the third parameter, which is
 - the third argument is a function that is performed when all execution is done,( like file close ) basically deallocating the resource used.
+
+### Stream personality
+
+Streams are calculated when required asynchronously and so produce appropriate results each time it runs. Like in the timer function, whenever we call the stream through a pipe to Enum we get different values. Which is a useful property for asynchronocity.
