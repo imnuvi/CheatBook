@@ -20,7 +20,7 @@ defmodule Countdown do
         {:halt, 0}
         count ->
           sleep(1)
-          { [inspect(count)], count -1 }
+          { [inspect(count)], count - 1 }
       end,
 
       fn _ -> end
