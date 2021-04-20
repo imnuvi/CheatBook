@@ -120,3 +120,9 @@ Here is a bit of code that produces all ranges in the given tuples and gives a n
 `iex> for {min,max} <- ranges, n <- min..max, do: n`
 
 A filter is a predicate which sees if the value is worthy of being sent to the next iteration. if the value passes through, the function is done, else no value is put in the output.
+
+<br><br>
+comprehensions can be used for simple stuff like flipping the keys with values. here is one that flips keys and values in a keyword list( list with key value paired tuples where keys are atoms.) (( since we are inverting keyword lists, the values are also atoms in the example.))
+
+`iex> lst = [ {:name, :aang}, {:trial, :boiledinoil}, {:place, :kiyoshi}]`<br>
+`iex> for {key, value} <- lst, do: {value, key}`
