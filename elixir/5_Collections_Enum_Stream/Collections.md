@@ -87,3 +87,9 @@ The resource function allows us to write custom streams from devices or collecti
 ### Stream personality
 
 Streams are calculated when required asynchronously and so produce appropriate results each time it runs. Like in the timer function, whenever we call the stream through a pipe to Enum we get different values. Which is a useful property for asynchronocity.
+
+In practice try using streams whenever you want to stop processing till data arrives or want to generate lots of data without generating them at once.
+
+### The collectible protocol
+
+the collectible protocol allows us to insert elements into a collection. But not all collections can be inserted to ( a range cannot be inserted to ). Easiest way to access the collectible protocol is with the Enum.into function.
