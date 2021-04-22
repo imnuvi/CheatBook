@@ -27,3 +27,11 @@ defmodule Countdown do
     )
   end
 end
+
+defmodule Mycollections do
+  @suit 'HDSC'
+  @rank '23456789TJQKA'
+  def deck() do
+    for s_suit <- @suit , s_rank <- @drank, do: [s_suit, s_rank]
+  end
+end

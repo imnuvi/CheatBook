@@ -1,4 +1,4 @@
-defmodule MyCollections do
+defmodule MyAssignments do
   # stole this from the solutions cause I had no clue.
   def all?(list) do
     all?(list, fn x -> !!x end)
@@ -46,7 +46,7 @@ defmodule MyCollections do
    IO.puts("HI")
    flatten(tail, flatten(head, newl))
   end
-  
+
   def flatten([], newl), do: newl
   def flatten([val], newl), do: flatten(val, newl)
   def flatten(val, newl), do: newl ++ [val]

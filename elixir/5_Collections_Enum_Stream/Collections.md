@@ -8,7 +8,8 @@ The Enum module will be mostly used. The Stream module is almost the same but it
 
 there are a lot of functions in Enum module, and a few are listed below
 
-<br><br>
+<br>
+<br>
 
 - `Enum.to_list(1..5)` converts any enumerable into a list
 - `Enum.concat([1,2,3], ["A","b","c"])` concatenates both collections
@@ -60,24 +61,19 @@ The streams can also be infinite. lets say we create a stream of ten million num
 ### Stream.cycle
 
 This takes an enumerable and returns an infinite Stream containing elements of the enumerable. If it runs out of elements it cycles through the elements over and over again `Enum.take((Stream.cycle([1,2])),10)` creates a stream of 10 alternating ones and twos. we can also get to infinity.<br>
-Streams are represented as functions when you inspect them.<br>
-<br>
+Streams are represented as functions when you inspect them.<br><br>
 
 ### Stream.repeatedly
 
-This is a second order function and takes another function, and invokes the function every time a new value is needed. This function can be any function. `Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)` takes a random value everytime and creates a stream of it.<br>
-<br>
+This is a second order function and takes another function, and invokes the function every time a new value is needed. This function can be any function. `Stream.repeatedly(&:random.uniform/0) |> Enum.take(3)` takes a random value everytime and creates a stream of it.<br><br>
 
 ### Stream.iterate
 
-This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it. `Stream.iterate(2,&(&1*&1))` creates a stream where each number is 2 power n.<br>
-<br>
+This function takes two values a starting number and a function. every new value needed will be called from the previous value and the function performed on it. `Stream.iterate(2,&(&1*&1))` creates a stream where each number is 2 power n.<br><br>
 
 ### Stream.unfold
 
-this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated. The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial. `Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)`<br>
-<br>
-<br>
+this is an extremely useful function(at least looks like.). It takes two parameters, a number and a function. The function returns a tuple of two values, one which is the value to be displayed, the other is the value to be sent to the next iteration. That means what is returned and what is sent next are different and can be manipulated. The syntax is Stream.unfold( state, fn state -> { stream_value, new_state } end) where the function syntax is crucial. `Stream.unfold( {0,1}, fn {v1,v2} -> { v1, {v1, v1+2} } end)`<br><br><br>
 So what is happening here? we have the initial fibonacci values 0 and 1\. The value returned is 0\. the next time 1,0+1 is set as state and the value 1 is returned. next 1, 2 is set as state and it returns the 2 and so on generating the fibonacci numbers.
 
 ### Stream.resource
@@ -121,8 +117,11 @@ Here is a bit of code that produces all ranges in the given tuples and gives a n
 
 A filter is a predicate which sees if the value is worthy of being sent to the next iteration. if the value passes through, the function is done, else no value is put in the output.
 
-<br><br>
-comprehensions can be used for simple stuff like flipping the keys with values. here is one that flips keys and values in a keyword list( list with key value paired tuples where keys are atoms.) (( since we are inverting keyword lists, the values are also atoms in the example.))
+<br>
+<br>
+comprehensions can be used for simple stuff like flipping the keys with values. here is one that flips keys and values in a keyword list( list with key value paired tuples where keys are atoms.) (( since we are inverting keyword lists, the values are also atoms in the example.)) remember the card generating function? It used Comprehensions
 
 `iex> lst = [ {:name, :aang}, {:trial, :boiledinoil}, {:place, :kiyoshi}]`<br>
 `iex> for {key, value} <- lst, do: {value, key}`
+
+These comprehensions work on bits too. But with a slight change in the syntax. Here the generators are enclosed in "<<" and ">>"
