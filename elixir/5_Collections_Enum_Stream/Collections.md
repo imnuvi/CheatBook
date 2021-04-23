@@ -119,9 +119,19 @@ A filter is a predicate which sees if the value is worthy of being sent to the n
 
 <br>
 <br>
-comprehensions can be used for simple stuff like flipping the keys with values. here is one that flips keys and values in a keyword list( list with key value paired tuples where keys are atoms.) (( since we are inverting keyword lists, the values are also atoms in the example.)) remember the card generating function? It used Comprehensions
-
-`iex> lst = [ {:name, :aang}, {:trial, :boiledinoil}, {:place, :kiyoshi}]`<br>
+comprehensions can be used for simple stuff like flipping the keys with values. here is one that flips keys and values in a keyword list( list with key value paired tuples where keys are atoms.) `iex> lst = [ {:name, :aang}, {:trial, :boiledinoil}, {:place, :kiyoshi}]`<br>
 `iex> for {key, value} <- lst, do: {value, key}`
 
+(( since we are inverting keyword lists, the values are also atoms in the example.)) remember the card generating function? It used Comprehensions
+
+<br>
+We can get a comprehension to return other collections like dictionaries. to do this we just include, another parameter the "into:" and a data structure to be returned.<br>
+`iex> for i <- ["cat", "dog"], into: %{}, do:{i, Sting.uppercase(i)}`
+
+returns `%{"cat" => "CAT", "dog" => "DOG"}`
+
 These comprehensions work on bits too. But with a slight change in the syntax. Here the generators are enclosed in "<<" and ">>"
+
+### Exercises
+
+use the span function we already wrote and write a function that returns prime numbers from 2 to n.
