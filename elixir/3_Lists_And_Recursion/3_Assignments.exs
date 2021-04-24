@@ -54,6 +54,10 @@ defmodule MyRecursion do
       |> Enum.each(&IO.puts/1)
   end
 
+  def span(initial, final) do
+    for val <- intial..final, 
+  end
+
 
 
 
