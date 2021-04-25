@@ -40,7 +40,7 @@ defmodule MyAssignments do
 
 
 
-  def flatten(lst) doflatten(lst, [])
+  def flatten(lst), do: flatten(lst, [])
 
   def flatten([head | tail], newl) do
    IO.puts("HI")
@@ -53,5 +53,19 @@ defmodule MyAssignments do
 
   # [[[1]],2,[[[1,2,3],10]],4,5]
   # [1,2,3,[4]]
+
+  def span(initial, final) do
+    for val <- Enum.to_list(initial..final), do: val
+  end
+
+  def isprime(val) do
+    val
+  end
+
+  def prime(n) do
+    for int <- span(2,n), filter: isprime(int), do: int
+  end
+
+
 
 end

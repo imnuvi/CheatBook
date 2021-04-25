@@ -55,7 +55,7 @@ defmodule MyRecursion do
   end
 
   def span(initial, final) do
-    for val <- intial..final, 
+    for val <- Enum.to_list(initial..final), do: val
   end
 
 
