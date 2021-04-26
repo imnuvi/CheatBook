@@ -58,14 +58,11 @@ defmodule MyAssignments do
     for val <- Enum.to_list(initial..final), do: val
   end
 
-  def isprime(val) do
-    val
-  end
-
   def prime(n) do
-    for int <- span(2,n), filter: isprime(int), do: int
+    # for int <- span(2,n), pos <- span(2,int), fn (int,pos) -> (rem(int,pos) != 0) end, do: int
+    # can be done with a list and the erotesthenos sieve
+    lst = span(2,n)
+    lst -- (for int <- lst, for pos <- lst, pos < int, pos*int < n, int/pos == 0)
   end
-
-
 
 end
