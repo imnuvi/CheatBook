@@ -62,7 +62,7 @@ defmodule MyAssignments do
     # for int <- span(2,n), pos <- span(2,int), fn (int,pos) -> (rem(int,pos) != 0) end, do: int
     # can be done with a list and the erotesthenos sieve
     lst = span(2,n)
-    lst -- (for int <- lst, for pos <- lst, pos < int, pos*int < n, int/pos == 0)
+    lst -- (for int <- lst, pos <- lst, pos <= :math.sqrt(int), rem(int,pos) == 0, into: [] , do: int)
   end
 
 end
