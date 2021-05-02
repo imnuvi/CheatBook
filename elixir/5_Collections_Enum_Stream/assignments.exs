@@ -65,4 +65,8 @@ defmodule MyAssignments do
     lst -- (for int <- lst, pos <- lst, pos <= :math.sqrt(int), rem(int,pos) == 0, into: [] , do: int)
   end
 
+
+
+  # Write a function that takes both lists and returns a copy of the orders, but with an extra field, total_amount, which is the net plus sales tax. If a shipment is not to NC or TX, there’s no tax applied.
+
 end
