@@ -54,6 +54,18 @@ defmodule MyRecursion do
       |> Enum.each(&IO.puts/1)
   end
 
+  def span(initial, final) do
+    for val <- Enum.to_list(initial..final), do: val
+  end
+
+  # aliter, recursive span
+  def rec_span(initial,final) when initial > final, do: []
+  # def rec_span(final,initial) when final > initial, do: rec_span(initial,final)
+  def rec_span(initial,final) do
+    [initial | rec_span(initial+1, final)]
+  end
+
+
 
 
 
