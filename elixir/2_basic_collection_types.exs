@@ -41,8 +41,10 @@ IO.puts(inspect keyword_list2)
 
 my_map = %{ "TN" => "Tamil Nadu", "Kl" => "Kerala", "KN" => "Karnataka" }
 scores = %{ 1 => "Topper", :two => "Runner", "Three" => "Trailer" }
+games = %{ pop: "Awesome", proplay: "Coool", Script: "not that good" }
 
 IO.puts(inspect my_map)
 IO.puts(scores[1])
 IO.puts(scores.two)
 IO.puts(scores["Three"])
+IO.puts(inspect games)
