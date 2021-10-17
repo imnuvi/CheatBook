@@ -36,12 +36,12 @@ view documentation here <link>https://hexdocs.pm/elixir/Keyword.html</link>
 
 pattern matches happens like so.
 <code>
-iex> person = %{ name: "Dave", height: 1.88 }
-%{height: 1.88, name: "Dave"}
-iex> %{ name: a_name } = person
-%{height: 1.88, name: "Dave"}
-iex> a_name
-"Dave"
+iex> person = %{ name: "Dave", height: 1.88 }<br>
+%{height: 1.88, name: "Dave"}<br>
+iex> %{ name: a_name } = person<br>
+%{height: 1.88, name: "Dave"}<br>
+iex> a_name<br>
+"Dave"<br>
 </code>
 
 
@@ -57,7 +57,7 @@ assume we have a list of dictionaries that contain person name and their height.
 
 <h3>Binding values</h3>
 
-values cannot be bound to values during pattern matching.
+values cannot be bound to other values during pattern matching.
 
 so %{ 2 => state } = %{ 1 => :ok, 2 => :error }
 

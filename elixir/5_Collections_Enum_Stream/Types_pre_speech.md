@@ -3,7 +3,7 @@ What are types. In elixir types exist. But they have various idealogies. So  a p
 There is an intrinsic difference between a primitive list(the one we initialize) and the List module, which has various functions like List.last. Maps are also a primitive type and elixir offers a better library for working with maps.
 
 
-An example. The Keyword type is an Elixir module. But basically it is implemented as a list of tuples.
+An example. The Keyword list type is an Elixir module. But basically it is implemented as a list of tuples.
 
 <code>options = [ {:width, 72}, {:style, "light"}, {:style, "print"} ]</code>
 

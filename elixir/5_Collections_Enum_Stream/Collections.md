@@ -56,7 +56,7 @@ One use case for using streams is when we are getting data from a server with en
 
 ### Infinite streams
 
-The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With enum the same can be done faster because only the first five elements are selected and so the other values are not even calculated `Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes 8 seconds `Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes just a few milliseconds. Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams. There are some wrapper functions to perform these. - Stream.cycle - Stream.repeatedly - Stream.iterate - Stream.unfold - Stream.resource
+The streams can also be infinite. lets say we create a stream of ten million numbers and just want the first five elements, with Enum module all ten million numbers are put in a list and then the first five elements are taken, which takes a lot of time. With stream the same can be done faster because only the first five elements are selected and so the other values are not even calculated `Enum.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes 8 seconds `Stream.map(1..10_000_000, &(&1+1)) |> Enum.take(5)` This takes just a few milliseconds. Here the streams are bounded to a value. But they may also go on forever, and here we need function based streams. There are some wrapper functions to perform these. - Stream.cycle - Stream.repeatedly - Stream.iterate - Stream.unfold - Stream.resource
 
 ### Stream.cycle
 
