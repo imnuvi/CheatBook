@@ -32,4 +32,17 @@ modifiers are used before nouns to describe the way in which you are going to pe
 
 # nouns
 Objects you perform an acton on or do something to
-- 2:
+- w: word
+- s: sentence
+- ): sentence ( another way of doing the same )
+- p: paragraph
+- }: paragraph ( another way of doing paragraph )
+- t: tag ( html xml )
+- b: block ( programming block )
+
+
+Nouns can be used as motion. You can use these nouns to move around content using them as size of  the jump. examples in moving section
+
+
+## building sentences with the various parts
+we can make the various pieces nouns verbs and modifiers intuitively just as how we use sentences in english
