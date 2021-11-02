@@ -1,10 +1,13 @@
-# from django.http import HttpResponse
-# from django.template import loader
 
+
+# from django.http import HttpResponse
+# from django.http import HttpResponse
+p# from django.template import loader
+p# from django.template import loader
 # Create your views here.
 
 # normal httpresponse
-# def index(request):
+## def # def # def   def index(  def index(  def index(  def index( def index(request):
 #     return HttpResponse("hi this is a view")
 
 #using template loader
@@ -83,8 +86,23 @@
 #     return current
 
 
+
+
 # import functools
-#
+adsjflasdjfaljdsflajsdf asldfafa asdfas dfasd f adfasd fasdf asdfa asdfasd a df
+asdfa
+a sdfasdf
+asdf
+
+
+a sdfadsf
+
+
+asdf ad fadfa
+afadf
+a
+
+dsfasd#
 # def mult(x):
 #     if x<2:
 #         x = x * 5
