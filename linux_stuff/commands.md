@@ -23,3 +23,5 @@ ctrl + k - cut from cursor to the end
 ctrl + y - paste whatever was cut
 
 ctrl + x + e - open the current command you are typing in your editor
+
+!* - gives the arguments of the previous command you typed
