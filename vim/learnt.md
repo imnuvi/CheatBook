@@ -37,3 +37,8 @@ replace a word with yanked word
 
 y3w - yank the required text ( yank three words here )
 viwp - visual inside word paste ( essentially replaces the current hovered word with the yanked word)
+
+to go to search previous declaration of identified below cursor
+shift + 3 - or # - find previous declaration
+
+shift + 8 - or * - find next declaration
