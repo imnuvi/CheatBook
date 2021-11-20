@@ -45,3 +45,6 @@ shift + 8 - or * - find next declaration
 
 on mac :
 :w !pbcopy - copies the current visual selection to clipboard
+
+
+ea - append to the end of current word
