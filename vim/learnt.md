@@ -42,3 +42,9 @@ to go to search previous declaration of identified below cursor
 shift + 3 - or # - find previous declaration
 
 shift + 8 - or * - find next declaration
+
+on mac :
+:w !pbcopy - copies the current visual selection to clipboard
+
+
+ea - append to the end of current word

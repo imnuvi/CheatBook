@@ -37,3 +37,5 @@ ctrl + x + e - open the current command you are typing in your editor
 
 !:0     the command
 !!      repeat the previous line
+
+ea - append at end of word
