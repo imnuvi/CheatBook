@@ -45,6 +45,13 @@ now set the policy for the user with
 
 you can list service space for minio with 
 
-```mc ls deploymentstore
+```mc ls minio_deployment
+
+to create a new bucket use the mb command
+the format is mc mc alias/bucket_name
+
+```mc mb minio_deployment/test_bucket
+
+
 
 
