@@ -27,6 +27,13 @@ ctrl + w + l - shift focus to the right split page
 ctrl + w + h - shift focus to the left split page
 
 
+Jumping to characters
+t + char - jump to the next instance of a character
+f + char - jump to a character and land on it
+once you have jumped to a character you can use 
+
+; - to go to next instance of the character
+, - to go to the previous instance of the character
 
 to change a single string under the cursor and enter edit mode on it
 
