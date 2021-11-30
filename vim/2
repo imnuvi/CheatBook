@@ -1,0 +1,45 @@
+inoremap jk <ESC> " remap jk to escape
+let mapleader = "'" " activator key
+set number " show line numbers
+set noswapfile " disable swap file
+set hlsearch " highlight search results
+set ignorecase " ignore case in search
+set incsearch " show search results incrementaly as you type
+set showcmd " show command being entered
+set showmatch " show matching brackets
+set belloff=all
+
+" install dracula theme
+packadd! dracula
+
+" install nerdtree package
+packadd! nerdtree
+
+" better vim support package
+packadd! vim-javascript
+
+" turn auto indent on
+" filetype on
+" filetype plugin on
+" filetype indent on
+:set autoindent
+:set smartindent
+set expandtab " tabs expand to spaces
+set tabstop=2 " existing tabs to 2 spaces
+set shiftwidth=2 " two colums with >
+inoremap <C-Return> <CR><CR><C-o>k<Tab> "remap the carriage return to properly indent stuff 
+"set softtabstop=2 " make pressing tab insert 2 columns
+
+
+" enable syntax highlighting
+syntax enable
+
+" set colorscheme to dracula
+colorscheme dracula
+
+
+" remap leader+n for nerdtree for me its ' . ctrl+n for nerdtree , ctrl+t for opening nerdtree sidebar, ctrl+f for finding in nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
