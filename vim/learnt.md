@@ -58,3 +58,13 @@ ea - append to the end of current word
 
 to enter proper indentation in current line normal mode press cc
 cc - clear current line and enter proper indentation
+
+
+
+Scrolling
+
+
+ctrl + e - scroll down
+ctrl + y - scroll up
+
+
