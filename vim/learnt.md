@@ -18,6 +18,7 @@ b - move a word left
 
 % - move to matching bracket
 
+ctrl + o          - move cursor to previous location
 
 :sp filename - open filename file in split view
 
