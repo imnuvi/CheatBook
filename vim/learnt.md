@@ -89,6 +89,16 @@ ctrl + w + v          - split window vertically
 ctrl + w + r          - rotate the screens
 ctrl + w + shift + r  - rotate the screens inverted
 ctrl + w + p          - go to previous window
+ctrl + w + =          - make all windows the same size
+ctrl + w + _          - make current window max size 
+ctrl + w + o          - show only the current window
+:buffers              - to check all the buffers
+:ba                   - show all buffers( after showing only current one )
+:vert ba              - show all buffers vertically
+:vsp | b3             - opens window in buffer 3 vertically
+
+:help ctrl-w          - to check all the possible stuff
+
 
 resize +30            - adds thirty rows to the current window
 vertical resize +20   - adds 20 columns to the current split
