@@ -18,6 +18,10 @@ b - move a word left
 
 % - move to matching bracket
 
+g + *             - global search for word under cursor
+g + #             - global search for word inverted ( search goes upward )and go to previous word
+
+
 ctrl + o          - move cursor to previous location
 
 :sp filename - open filename file in split view
@@ -104,3 +108,8 @@ ctrl + w + o          - show only the current window
 resize +30            - adds thirty rows to the current window
 vertical resize +20   - adds 20 columns to the current split
 vertical resize -15   - removes 15 columns to the current split
+
+
+
+
+%                     - to move to matching bracket
