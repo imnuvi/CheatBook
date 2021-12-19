@@ -68,3 +68,8 @@ ctrl + e - scroll down
 ctrl + y - scroll up
 
 
+floaterm opens a terminal as a popup window within vim
+set the global variable g:floaterm_keymap_toggle to any keybinding you want Ive kept it to fn1 as this works on the terminal as well
+
+to quit the terminal do ctrl + d and :q to exit it
+
