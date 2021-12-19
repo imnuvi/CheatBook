@@ -84,4 +84,12 @@ ctrl + w + h          - move focus to left screen
 ctrl + w + j          - move focus to bottom screen
 ctrl + w + k          - move focus to top screen
 ctrl + w + l          - move focus to right screen
+ctrl + w + x          - swap the windows
+ctrl + w + v          - split window vertically
+ctrl + w + r          - rotate the screens
+ctrl + w + shift + r  - rotate the screens inverted
+ctrl + w + p          - go to previous window
 
+resize +30            - adds thirty rows to the current window
+vertical resize +20   - adds 20 columns to the current split
+vertical resize -15   - removes 15 columns to the current split
