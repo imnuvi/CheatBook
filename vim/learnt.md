@@ -73,3 +73,15 @@ set the global variable g:floaterm_keymap_toggle to any keybinding you want Ive 
 
 to quit the terminal do ctrl + d and :q to exit it
 
+
+
+splitting the pane:
+
+:sp                   - split the screen horizontally
+:vsp                  - split the screen vertically
+ctrl + w              - enter the window split help mode
+ctrl + w + h          - move focus to left screen
+ctrl + w + j          - move focus to bottom screen
+ctrl + w + k          - move focus to top screen
+ctrl + w + l          - move focus to right screen
+
