@@ -21,3 +21,18 @@ project
       this folder consists of the static files and layout of our app
   Gradle Scripts
     These scripts are used for building the app and providing the apk file that will run on the device
+
+
+two of the main files that are essential are the MainActivity.kt kotlin file and the activity_main.xml file which is present in the res folder.
+
+the mainActivity kotlin file is called the activity that will be started when the app starts and what it does
+
+The activity_main.xml file actually defines the layout of how our app will look like. the components of this file are called views and these views are 
+These views are converted into Kotlin view objects during runtime by a process called layout inflation, which can then be rendered and dynamically changed as the application runs.
+
+each of these activity is defined in the manifest on where they run. so the starting point of the application is the manifest file.
+the main activity class runs a set of functions as a setup. one of these functions is the oncreate function which we will override with our own stuff. here we will call the setContentView method which will specify the layout that will be used and will also inflate the view.
+
+
+now the kotlin code actually runs the logic that happens when the user interacts. To do this we need to reference the elemenets on the view from the kotlin code.
+the layout is actually connected with the kotlin objects in a view hierarchy tree. This is basically how you access the children from the parent. This can be done with a unique id ( just like react ids bro )
