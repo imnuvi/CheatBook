@@ -6,3 +6,18 @@ we will be using android studio to create an app
 - create a new project with whichever template you want.
   - one additional thing you will have to do is setup the build tools version and the android sdk version. This is setup by going to the file option and project structure. go to modules panel and in the properties tab select the version whichever you have installed and is the latest one
 - now build the code and the device should show up in the run options. Click on run and the app will run on the android device.
+
+the folder structure of a project is as follows
+
+project
+  app
+    - Manifest
+      the manifest file that enables how the app is structured and which classes are loaded. the app permissions and stuff is also declared here
+    - java
+      this folder consists of the kotlin backend code and the test files that will be used to enable the logic for the app
+    - java ( generated )
+      this is the build java files that will actually be run on the app
+    - res
+      this folder consists of the static files and layout of our app
+  Gradle Scripts
+    These scripts are used for building the app and providing the apk file that will run on the device
