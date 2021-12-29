@@ -33,6 +33,11 @@ These views are converted into Kotlin view objects during runtime by a process c
 each of these activity is defined in the manifest on where they run. so the starting point of the application is the manifest file.
 the main activity class runs a set of functions as a setup. one of these functions is the oncreate function which we will override with our own stuff. here we will call the setContentView method which will specify the layout that will be used and will also inflate the view.
 
+usually it is a better practice to put your strings in the res folder . there is a folder called vars within this and in that create a file called strings.xml , follow the syntax <string name=mystr>myvalue</string>  and then access them with the @string/string_name
+
 
 now the kotlin code actually runs the logic that happens when the user interacts. To do this we need to reference the elemenets on the view from the kotlin code.
-the layout is actually connected with the kotlin objects in a view hierarchy tree. This is basically how you access the children from the parent. This can be done with a unique id ( just like react ids bro )
+the layout is actually connected with the kotlin objects in a view hierarchy tree. This is basically how you access the children from the parent. This can be done with a unique id ( just like react ids bro ). you can then use the method findViewByID to get the element which you had named in the layout file.
+
+
+note: also you will see a lot of R everywhere in the kotlin code. This R stands for resource. Essentially whenever you create an id and stuff the object gets added to the resource and can be accessed within the codebase.
