@@ -1,5 +1,5 @@
 
-we will be using android studio to create an app
+we will be using android studio to create an android app
 
 - install all the required stuff with android studio and set it up ( fairly straight forward. If not check the docs bro )
 - enable developer options on your mobile and connect it to your laptop via usb cable. and enable usb debugging in the developer options
