@@ -47,4 +47,6 @@ now the kotlin code actually runs the logic that happens when the user interacts
 the layout is actually connected with the kotlin objects in a view hierarchy tree. This is basically how you access the children from the parent. This can be done with a unique id ( just like react ids bro ). you can then use the method findViewByID to get the element which you had named in the layout file.
 
 
-note: also you will see a lot of R everywhere in the kotlin code. This R stands for resource. Essentially whenever you create an id and stuff the object gets added to the resource and can be accessed within the codebase.
+note: also you will see a lot of R everywhere in the If you meant "java" specifically:
+It was migrated from homebrew/cask to homebrew/core.If you meant "java" specifically:
+It was migrated from homebrew/cask to homebrew/core.kotlin code. This R stands for resource. Essentially whenever you create an id and stuff the object gets added to the resource and can be accessed within the codebase.
