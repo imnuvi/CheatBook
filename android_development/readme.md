@@ -29,6 +29,13 @@ the mainActivity kotlin file is called the activity that will be started when th
 
 The activity_main.xml file actually defines the layout of how our app will look like. the components of this file are called views and these views are 
 These views are converted into Kotlin view objects during runtime by a process called layout inflation, which can then be rendered and dynamically changed as the application runs.
+you have to provide a namespace in which the view is rendered in. So basically lets say you want to run some code in testing environment that doesnt have the actual runtime files, you can provide a default file with the tools namespace
+
+for eg:
+  we have an <ImageView android:src='actual_image'
+                        tools:src='demo_image'/>
+
+  here during testing you will get the demo image and when you actually build the app you will see the actual_image file.
 
 each of these activity is defined in the manifest on where they run. so the starting point of the application is the manifest file.
 the main activity class runs a set of functions as a setup. one of these functions is the oncreate function which we will override with our own stuff. here we will call the setContentView method which will specify the layout that will be used and will also inflate the view.
