@@ -50,3 +50,22 @@ the layout is actually connected with the kotlin objects in a view hierarchy tre
 note: also you will see a lot of R everywhere in the If you meant "java" specifically:
 It was migrated from homebrew/cask to homebrew/core.If you meant "java" specifically:
 It was migrated from homebrew/cask to homebrew/core.kotlin code. This R stands for resource. Essentially whenever you create an id and stuff the object gets added to the resource and can be accessed within the codebase.
+
+
+Creating custom views:
+
+some good documentation on this https://developer.android.com/codelabs/advanced-android-kotlin-training-custom-views#4
+
+  in order to create a custom view, you will first need to create the custom view class in the java folder ( the folder where your main.kt file is present ) the file will automatically be compiled with gradle
+  now youll need to overload the default view by overloading it with your own class
+
+    class MyCanvasView @JvmOverloads constructor(context: Context, attrs: AttributeSet?= null, defStyleAttr: Int=0) : View(context, attrs, defStyleAttr){
+    
+
+    and refer the canvas like so
+
+    private lateinit var my_canvas : Canvas
+
+
+
+
