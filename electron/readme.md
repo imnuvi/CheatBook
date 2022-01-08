@@ -48,5 +48,22 @@ steps to start a basic electon app:
 - in order to handle window conditions for different platforms we have to write our own conditions and logic and their appropriate lifecycle methods
 - Now to access content from the global content in our index.html we need to preload some contnet before the rendering happens ( this is because the window and the render process are in different threadshttps://www.youtube.com/watch?v=cvTipU9gN5g)
 
-- always use the path module and the __dirname variable so that you can always reference the files you are looking for
+- always use the path module and the `__dirname` variable so that you can always reference the files you are looking for
 
+__
+
+Things to keep in mind:
+Generally how the electron app runs is with the main process and the render process
+
+Main process  - tells all the other processes what to do. 
+render process - actually renders the dom elements and displays the Gui
+
+so usually its a really bad idea to do hard computing on either of these two processes. Lets say we want to calculate pi or count to infinitiy. this is really computing intensive. Now if we run this on the main process, we are essentially taking up athe main thread and doing computation on this. Now if we look back the main process actually does a lot of stuff. not just the calculation that we sent it but it also routes the apis to the chrome engine, tells the render process what to render, and a whole bunch of other stuff. now if we put this process under load then our render calls would become slow and janky. 
+
+now if we put the calculation on the render process itself, then the dom loading and event listeners that are running would stop and slow down the rendering of our frontend render and make our app really janky. 
+
+
+Now here is where we need to know about the remote module. Basically the remote module allows us to create a messaging platform between the main process and other windows that are open from the render process. But this `remote` module is synchronous. which means it sends out blocking calls to the main process. which means if there a lot of remote calls it will also block the performance
+
+
+Here we can use the Electron-Remote package. What it essentially does is, it spawns some new windows that will perform the background processes. so essentially webpages/windows that dont show a gui and are hidden, but will be running the computation stuff that we provided it in the background. We can consider them as separate threads and can use our Processing power to calculate the hard stuff without making our app experience janky.
