@@ -43,3 +43,10 @@ steps to start a basic electon app:
   })
 
   win.loadFile('index.html')`
+
+
+- in order to handle window conditions for different platforms we have to write our own conditions and logic and their appropriate lifecycle methods
+- Now to access content from the global content in our index.html we need to preload some contnet before the rendering happens ( this is because the window and the render process are in different threadshttps://www.youtube.com/watch?v=cvTipU9gN5g)
+
+- always use the path module and the __dirname variable so that you can always reference the files you are looking for
+
