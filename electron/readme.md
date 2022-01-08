@@ -51,6 +51,8 @@ steps to start a basic electon app:
 - always use the path module and the `__dirname` variable so that you can always reference the files you are looking for
 
 __
+excerpt from this talk
+https://www.infoq.com/presentations/electron-pitfalls/
 
 Things to keep in mind:
 Generally how the electron app runs is with the main process and the render process
@@ -67,3 +69,16 @@ Now here is where we need to know about the remote module. Basically the remote 
 
 
 Here we can use the Electron-Remote package. What it essentially does is, it spawns some new windows that will perform the background processes. so essentially webpages/windows that dont show a gui and are hidden, but will be running the computation stuff that we provided it in the background. We can consider them as separate threads and can use our Processing power to calculate the hard stuff without making our app experience janky.
+
+
+The
+RequestIdleCallback api:
+
+this api is in the chrome engine and since we are in electron we can use any chrome api without worrying about other engines implementing it( like IE )
+so requestIdleCallback api basically gives us a way to check if the app isnt in use for a while by the user. lets say we are doing lots of db operations like 100 put operations. Now we split it into chunks of 10. when we do the requestIdleCallback function, it tells us if there is like 300 ms to perform an action. once ten put operations are done, the api is called again, the next 10 start and if any are stuck in the middle, then we wait till we get the next opportunity to perform and complete it
+
+
+
+Local code only:
+
+now what this means is dont load code from other places. so no Babel, No SaaS stuff. If all your code is local and packaged with the app you send. 
