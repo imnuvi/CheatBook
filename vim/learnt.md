@@ -113,3 +113,9 @@ vertical resize -15   - removes 15 columns to the current split
 
 
 %                     - to move to matching bracket
+
+
+shift + k - search manpages for the word under your cursor
+g + f - go to the file under the cursor
+g + shift + f - go to the particular line in an error message
+
