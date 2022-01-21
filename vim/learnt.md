@@ -120,3 +120,5 @@ g + f - go to the file under the cursor
 g + shift + f - go to the particular line in an error message
 
 shift + c - in nerdtree moves the folder structure to the node you are in
+
+cc - takes you into insert mode on the current line you are in
