@@ -70,15 +70,17 @@ Scrolling
 
 
 ctrl + e - scroll down
-ctrl + y - scroll up
+ctrl + y - scroll up 
+
+floaterm opens a terminal as a popup window within vim set the global variable g:floaterm_keymap_toggle to any keybinding you want Ive kept it to fn1 as this works on the terminal as well to quit the terminal 
+
+do ctrl + d and :q to exit it 
 
 
-floaterm opens a terminal as a popup window within vim
-set the global variable g:floaterm_keymap_toggle to any keybinding you want Ive kept it to fn1 as this works on the terminal as well
+with nerdtree tab  you can use 
 
-to quit the terminal do ctrl + d and :q to exit it
-
-
+i                     - opens the file in horizontal split
+s                     - opens the file in vertical split
 
 splitting the pane:
 
@@ -118,4 +120,23 @@ vertical resize -15   - removes 15 columns to the current split
 shift + k - search manpages for the word under your cursor
 g + f - go to the file under the cursor
 g + shift + f - go to the particular line in an error message
+
+
+shift + c - in nerdtree moves the folder structure to the node you are in 
+cc - takes you into insert mode on the current line you are in
+
+
+
+New stuff:
+
+
+gg and G are not just for going to the bottom and top of the file. In visual mode these can be used to select between lines. They are basically jump actions
+so 
+
+V100G - will select from current line to 100th line
+V100gg - will select from current line to 100th line
+
+both are essentially the same
+
+
 
