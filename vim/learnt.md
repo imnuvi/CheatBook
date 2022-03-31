@@ -140,3 +140,5 @@ both are essentially the same
 
 
 
+On vimtree to show hidden files, do 
+shift + i
