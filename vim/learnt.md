@@ -142,3 +142,7 @@ both are essentially the same
 
 On vimtree to show hidden files, do 
 shift + i
+
+
+ctrl + x             - reduce the current number you are on
+ctrl + a             - increase the number you are one
