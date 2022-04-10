@@ -81,6 +81,8 @@ with nerdtree tab  you can use
 
 i                     - opens the file in horizontal split
 s                     - opens the file in vertical split
+C                     - changes directory to the folder you are in
+ctrl + r              - goes back to the previous nested directory
 
 splitting the pane:
 
@@ -144,5 +146,11 @@ On vimtree to show hidden files, do
 shift + i
 
 
-ctrl + x             - reduce the current number you are on
-ctrl + a             - increase the number you are one
+ctrl + x                  - reduce the current number you are on
+ctrl + a                  - increase the number you are one
+
+
+:diffsplit filename       - open a file for difference mode
+:vert diffsplit filename  - diff mode vertical
+:diffupdate               - update the diff after changes
+
