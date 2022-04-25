@@ -39,3 +39,5 @@ ctrl + x + e - open the current command you are typing in your editor
 !!      repeat the previous line
 
 ea - append at end of word
+
+d2u - dos to unix. converts dos system line endings and files to unix style endings for conversion
