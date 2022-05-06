@@ -5,6 +5,9 @@
 shift + i - enter insert mode at start of a line
 shift + a - enter insert mode at end of a line
 
+shift + ^ - move to start of line
+shift + $ - move to end of the line
+
 j - move down
 k - move up
 h - move left
@@ -153,4 +156,8 @@ ctrl + a                  - increase the number you are one
 :diffsplit filename       - open a file for difference mode
 :vert diffsplit filename  - diff mode vertical
 :diffupdate               - update the diff after changes
+
+:Vex                      - open file explorer vertically
+:Sex                      - open file explorer horizontally
+
 
