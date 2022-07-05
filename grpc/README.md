@@ -17,7 +17,7 @@ advantages of using grpc over rest:
   - the data structure is already known by the server and the client making it faster to serialize and deserialize rather than parsing a json and then enumerating its fields
   - uses http/2 so its pretty fast
 
-## Protocol buffers
+### Protocol buffers
   Protocol buffers offer a platform netural and language neutral mechanism for serializing structured data which is both forward and backward compatible. Just like json but faster
   Protocol buffer messages and services are stored in .proto files.
 
@@ -29,3 +29,10 @@ advantages of using grpc over rest:
   }</code>
 
   A compiler is invoked at build time to convert the proto file into language specific code to manipulate the proto buff
+
+## defining a proto buf
+  1. specify the field as optional or repeated
+  2. specify the data type of the field
+    - data types can be integer, boolean, float, oneof, enum, message, map
+    they also support additional data types
+
