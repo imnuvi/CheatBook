@@ -5,6 +5,9 @@
 shift + i - enter insert mode at start of a line
 shift + a - enter insert mode at end of a line
 
+shift + ^ - move to start of line
+shift + $ - move to end of the line
+
 j - move down
 k - move up
 h - move left
@@ -81,6 +84,8 @@ with nerdtree tab  you can use
 
 i                     - opens the file in horizontal split
 s                     - opens the file in vertical split
+C                     - changes directory to the folder you are in
+ctrl + r              - goes back to the previous nested directory
 
 splitting the pane:
 
@@ -145,5 +150,21 @@ Zo                          - open json in file
 
 :e .                        - explorer
 :%!python -m json.tool      - prettify json
+
+
+On vimtree to show hidden files, do 
+shift + i
+
+
+ctrl + x                  - reduce the current number you are on
+ctrl + a                  - increase the number you are one
+
+
+:diffsplit filename       - open a file for difference mode
+:vert diffsplit filename  - diff mode vertical
+:diffupdate               - update the diff after changes
+
+:Vex                      - open file explorer vertically
+:Sex                      - open file explorer horizontally
 
 
