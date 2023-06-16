@@ -144,6 +144,13 @@ V100gg - will select from current line to 100th line
 both are essentially the same
 
 
+Gd                          - go to definition of word in the current file
+Zm                          - fold json in file
+Zo                          - open json in file
+
+:e .                        - explorer
+:%!python -m json.tool      - prettify json
+
 
 On vimtree to show hidden files, do 
 shift + i
