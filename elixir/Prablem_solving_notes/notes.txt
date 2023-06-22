@@ -1,0 +1,1 @@
+to optimize string problem efficiency - String.split("", trim: true)
