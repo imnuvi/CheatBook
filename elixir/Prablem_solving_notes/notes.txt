@@ -1,1 +1,20 @@
 to optimize string problem efficiency - String.split("", trim: true)
+
+
+Given a madule with struct, you can use the following syntax to create the struct and use it
+
+Struct:
+
+defmodule ListNode do
+  @type t :: %__MODULE__{
+          val: integer,
+          next: ListNode.t() | nil
+        }
+  defstruct val: 0, next: nil
+end
+
+initializing new struct with the args
+
+argsl = [val: 22, next: list2.next]
+struct(ListNode, argsl)
+
