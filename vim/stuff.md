@@ -65,3 +65,11 @@ Now those are basics of vim.
 - :wq - write chnages to file and then quit
 - ;saveas ~/some/path_to_new_file - save the file to that location
 - :zz - same as :wq
+
+## General thoughts
+Vim should not be thought of as a text editor. It is a paradigm to think about text and how we go about editing it.
+For example when we read a book, to reach maximum reading efficiency, we don't read a text word by word, But we read the line as a whole gathering multiple words at a time, and let our mind process them on the go. Similarly with vim, we don't look at text as a language representation. Instead, text itself is the canvas in which we move edit and perform various actions, and these actions are performed by using vim as a language. For example a line can just be deleted or a word can be yanked by quickly using a fey keystrokes
+
+The best way to learn vim is to get comfortable with the terminal first, and then forcing yourself to just use vim wherever possible, on vscode, on pycharm, or straight up on the terminal by setting input mode to vim
+
+Happy vimming!
