@@ -7,6 +7,7 @@ shift + a - enter insert mode at end of a line
 
 shift + ^ - move to start of line
 shift + $ - move to end of the line
+g + _ - move to the last non space
 
 j - move down
 k - move up
