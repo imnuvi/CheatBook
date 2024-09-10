@@ -27,6 +27,9 @@ bind r source-file ~/.tmux.conf
 
 ## Keybindings
 
+
+leader + : - get into command mode
+
 setw -g mode-keys vi
 
 
@@ -59,5 +62,5 @@ leader + s - show session
 leader ( - switch to previous session
 leader ) - switch to previous session
 
-leader + w - preview windows in the session
+leader + w - preview windows in the session ( you can move through them with vim like keybindings )
 leader + [ - copy mode
