@@ -7,6 +7,7 @@ shift + a - enter insert mode at end of a line
 
 shift + ^ - move to start of line
 shift + $ - move to end of the line
+g + _ - move to the last non space
 
 j - move down
 k - move up
@@ -59,13 +60,23 @@ shift + 3 - or # - find previous declaration
 shift + 8 - or * - find next declaration
 
 on mac :
-:w !pbcopy - copies the current visual selection to clipboard
+:%w !pbcopy - copies the current visual selection to clipboard
 
+
+Vim Clipboard
+"* - vim selection clipboard register
+"+ - system selection clipboard register
+"+p - to paste from system clipboard
+:put + - paste from system clipboard
 
 ea - append to the end of current word
 
 to enter proper indentation in current line normal mode press cc
 cc - clear current line and enter proper indentation
+
+zz - move the cursor to the middle of the file.
+
+g + ctrl + g - count the number words and get more data about the file
 
 
 
