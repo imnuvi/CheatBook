@@ -8,3 +8,10 @@ follow along on this adventure!
 
 
 
+#### Useful stuff
+
+- python -i my_file.py : opens a terminal with the specified python file loaded
+
+
+
+#### Python oddities

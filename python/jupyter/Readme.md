@@ -16,6 +16,10 @@ To install a conda env to a particular ipykernel for use in jupyter notebook
 ipython kernel install --user --name=<any_name_for_kernel>
 
 
+To check all the available kernels in the machine
+
+jupyter kernelspec list
+
 
 
 

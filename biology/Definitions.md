@@ -2,6 +2,9 @@
 ## Biological terms
 
 
+genotype - the genetic makeup of the organism's genome
+phenotpe - the observable differences in the organism
+
 Cell Markers - These are molecules or substances that can be used to uniquely identify different types of cells. 
                 They can be unique set of proteins or carbohydrates attached to the cell or they can be intracellular.
                 
@@ -75,5 +78,26 @@ UMI Unique Molecular Identifier - These are indices added to sequencing before P
 
 PCR amplification - This is a method of amplifying ( increasing the number of samples ) of small parts of the dna from a Sequence library.
                 This uses DNA polymerase to copy over small parts of the DNA.
+
+
+
+Hematopoiesis - The process of generating new blood cells in the bone marrow
+
+Cis-regulatory elements : non coding DNA sequence that controls gene transcription 
+    - can be promoters or enhancers.
+    - These are 5-15 base pairs of the DNA that are capable of being bound to transcription factors.
+    - Can be found out using CRE sequencing.
+    - CREs are gained and lost over time in a process called turnover.
+    - usually allele specific
+
+Trans-regulatory elements : these are also called transcription factors and affect transcription over long distances.
+    - These interact with cis-regulatory elements to regulate gene expression.
+    - these can affect large number of genes
+
+Episome : These are extrachromosomal DNA molecules which can replicate without being attached to the host genome autonomously. ( eg. plasmids )
+    - in stem cell research episomal stem cells can reprogram stem cells to induced pleuripotent stem cells
+
+
+iPSC - induced Pleuripotent stem cell. THese are reprogrammed cells and are called master cells and can differentiate into any cell type.
 
 

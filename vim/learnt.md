@@ -59,8 +59,13 @@ shift + 3 - or # - find previous declaration
 
 shift + 8 - or * - find next declaration
 
+general operations:
+:g/^$/d - deletes all empty lines ( explanation: :g matches all lines with a regex and performs the normal mode action in the last part on each match )
+:s/\s\+$//e - trims white spaces from the end of lines ( regex ops \s is space \+ is one or more and $ is end of line anchor. e just suppresses error messages )
+
 on mac :
 :%w !pbcopy - copies the current visual selection to clipboard
+
 
 
 Vim Clipboard
@@ -178,4 +183,6 @@ ctrl + a                  - increase the number you are one
 :Vex                      - open file explorer vertically
 :Sex                      - open file explorer horizontally
 
+
+vim -r .swp               - if you only have the swap file then open it in editor.
 

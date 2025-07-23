@@ -41,3 +41,14 @@ ctrl + x + e - open the current command you are typing in your editor
 ea - append at end of word
 
 d2u - dos to unix. converts dos system line endings and files to unix style endings for conversion
+
+
+
+
+ssh tools:
+
+ssh -L <local_port>:<remote_host>:<remote_port> <username>@<remote_server_address> - Lets the user port forward a particular port from a remote machine to the local machine. 
+
+
+
+

@@ -48,8 +48,10 @@ leader + : - command mode
 leader + % - split window vertically
 leader + " - split window horizontally
 leader + arrow keys - move across panes
-leader + o - cycle panes
+leader + o - cyclic switch panes
+leader + q - show pane numbers - you can then input pane number to switch focus
 leader + ; - go to previous pane;
+leader + o - cyclic swap panes
 leader + { - swap panes
 leader + } - swap panes
 leader + z - zoom into pane
@@ -62,5 +64,5 @@ leader + s - show session
 leader ( - switch to previous session
 leader ) - switch to previous session
 
-leader + w - preview windows in the session ( you can move through them with vim like keybindings )
+leader + w - preview windows in the session ( you can move through them with vim like keybindings ) you can also look at the panes
 leader + [ - copy mode
