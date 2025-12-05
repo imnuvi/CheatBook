@@ -75,7 +75,11 @@ $$
 Now for this function, we need to find the gradient
 
 $$
-\nablaf(x, y) = [\partial{f}/\partial(x) \partial{f}/partial{y}] = [2x 2y]
+\nabla f(x, y) = 
+\begin{bmatrix}
+    \partial{f}/\partial(x)\\
+    \partial{f}/partial{y}
+\end{bmatrix} = \begin{bmatrix} 2x \\ 2y \end{bmatrix}
 $$
 
 Here, this is the gradient term which basically tells us how each of these dimensions change. Gradient descent just tells us which direction to take and the learning rate tells us how long of a step to take. Eventually, we will end up at the bottom of the function at the minimum for gradient descent, or at the maximum for gradient ascent. But if we don't exactly know what the function is, then we will need to explore the entire function for the min or max and then that's how we reach the optimum point.
