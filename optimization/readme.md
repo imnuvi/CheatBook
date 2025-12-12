@@ -85,3 +85,21 @@ $$
 Here, this is the gradient term which basically tells us how each of these dimensions change. Gradient descent just tells us which direction to take and the learning rate tells us how long of a step to take. Eventually, we will end up at the bottom of the function at the minimum for gradient descent, or at the maximum for gradient ascent. But if we don't exactly know what the function is, then we will need to explore the entire function for the min or max and then that's how we reach the optimum point.
 
 All the simple examples we saw have one or two variables. But in a machine learning setting, we have millions of parameters that need to be solved, which basically there is no way to solve it. But the best we can do is to approximate the value with a numerical method and hope that we will land at the optimum without having to solve the entire math algebraically. 
+
+
+
+Nice!
+
+
+### Gradient free optimizations:
+These are algorithms that do not require the gradient - simple as that. Instead of calculating the gradient, search happens directly on the function f(x).
+
+These are used in places where gradients don't exist and are too expensive, the function is noisy or unknown, or evaluation is done via simulation.
+
+Examples:
+Here are a few good examples:
+
+- Grid search
+- Genetic algorithms
+- Bayesian optimization.
+- Particle Swarm optimization
